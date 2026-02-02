@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#4a5eb8">
     <title>Join Navi-ken Waiting List</title>
     <style>
         * {
@@ -13,12 +14,13 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a5eb8 0%, #5a3d7a 100%);
             min-height: 100vh;
+            min-height: -webkit-fill-available;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
         }
 
         .signup-container {
@@ -85,7 +87,8 @@
         .submit-btn {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 44px;
+            background: linear-gradient(135deg, #4a5eb8 0%, #5a3d7a 100%);
             color: white;
             border: none;
             border-radius: 50px;
@@ -93,7 +96,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(74, 94, 184, 0.4);
         }
 
         .submit-btn:hover {
@@ -113,7 +116,10 @@
         }
 
         .back-link a {
-            color: #667eea;
+            display: inline-block;
+            min-height: 44px;
+            line-height: 44px;
+            color: #4a5eb8;
             text-decoration: none;
             font-size: 14px;
         }
@@ -146,11 +152,22 @@
 
         @media (max-width: 600px) {
             .signup-container {
-                padding: 30px 20px;
+                padding: 24px 16px;
+                margin: 10px;
             }
 
             .logo h1 {
                 font-size: 28px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            body {
+                padding: 12px;
+            }
+
+            .signup-container {
+                padding: 20px 12px;
             }
         }
     </style>

@@ -35,8 +35,8 @@ function highlightActiveSection() {
     });
 }
 
-// Run on scroll
-window.addEventListener('scroll', highlightActiveSection);
+// Run on scroll (passive for better mobile scroll performance)
+window.addEventListener('scroll', highlightActiveSection, { passive: true });
 
 // Run on page load
 window.addEventListener('load', highlightActiveSection);
@@ -56,10 +56,14 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections
+// Observe all sections - only hide sections below the fold to avoid blank screen on load
 document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
+    const rect = section.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!inView) {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+    }
     section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(section);
 });

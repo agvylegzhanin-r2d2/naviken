@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+/* Respect reduced motion preference (accessibility, all browsers/OS) */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 :root {
     --primary-color: #4a5eb8;
     --secondary-color: #5a3d7a;
@@ -93,11 +102,21 @@ body::after {
     padding: 0 20px;
 }
 
-/* Language Switcher */
+/* Prevent horizontal overflow and ensure tap highlight on touch devices */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a, button {
+    -webkit-tap-highlight-color: rgba(74, 94, 184, 0.2);
+}
+
+/* Language Switcher - safe area for notched phones */
 .language-switcher {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: max(20px, env(safe-area-inset-top));
+    left: max(20px, env(safe-area-inset-left));
     z-index: 1001;
 }
 
@@ -106,6 +125,8 @@ body::after {
     border: none;
     border-radius: 30px;
     padding: 12px 24px;
+    min-height: 44px;
+    min-width: 44px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -133,11 +154,11 @@ body::after {
     }
 }
 
-/* Floating Navigation Menu */
+/* Floating Navigation Menu - safe area for notched phones */
 .floating-nav {
     position: fixed;
     top: 50%;
-    right: 30px;
+    right: max(30px, env(safe-area-inset-right));
     transform: translateY(-50%);
     z-index: 1000;
     background: rgba(255, 255, 255, 0.98);
@@ -174,6 +195,7 @@ body::after {
     align-items: center;
     gap: 12px;
     padding: 12px 15px;
+    min-height: 44px;
     border-radius: 12px;
     background: transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -343,7 +365,8 @@ body::after {
 }
 
 .hero-logo img {
-    width: 563px;
+    width: 100%;
+    max-width: 563px;
     height: auto;
     display: block;
 }
@@ -401,6 +424,8 @@ body::after {
     margin: 0 auto 20px;
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .mission-highlight {
@@ -409,6 +434,8 @@ body::after {
     margin: 0 auto;
     text-align: center;
     color: #ffffff;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .mission-content {
@@ -1193,6 +1220,7 @@ body::after {
     width: fit-content;
     margin: 0 auto 40px auto;
     padding: 18px 40px;
+    min-height: 44px;
     font-size: 20px;
     font-weight: 600;
     color: white;
@@ -1201,6 +1229,8 @@ body::after {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(74, 94, 184, 0.4);
+    text-align: center;
+    line-height: 1.2;
 }
 
 .waiting-list-btn:hover {
@@ -1214,6 +1244,10 @@ body::after {
 }
 
 .contact-email a {
+    display: inline-block;
+    min-height: 44px;
+    padding: 8px 0;
+    line-height: 1.4;
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -1412,6 +1446,12 @@ body::after {
     .prototype-gallery {
         grid-template-columns: 1fr;
         gap: 30px;
+        max-width: 100%;
+    }
+    
+    .how-visual-item,
+    .how-it-works-text {
+        min-height: auto;
     }
 
     .prototype-card {
@@ -1437,10 +1477,6 @@ body::after {
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
-    }
-    
-    .hazard-item {
-        padding: 20px;
     }
     
     .hazard-item {
@@ -1511,7 +1547,7 @@ body::after {
     }
 
     .hero-logo img {
-        width: 375px;
+        max-width: min(375px, 100%);
     }
 
     .hero-title {
@@ -1532,8 +1568,10 @@ body::after {
     }
 
     .mission-image img {
-        max-width: 400px;
-        height: 300px;
+        max-width: 100%;
+        height: auto;
+        min-height: 200px;
+        object-fit: contain;
     }
 
     .how-visual-item img {
