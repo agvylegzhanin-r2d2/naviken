@@ -1,0 +1,80 @@
+GOOGLE FORMS OPTION (EASIEST - NO CODING!)
+===========================================
+
+This is the SIMPLEST option - uses Google Forms which automatically saves to Google Sheets.
+No coding, no API setup, works immediately!
+
+STEP 1: Create a Google Form
+-----------------------------
+1. Go to https://forms.google.com/
+2. Click the "+" to create a new form
+3. Title: "Navi-ken Waiting List"
+4. Add these questions:
+   - Question 1: "Full Name" (Short answer, Required)
+   - Question 2: "Email" (Short answer, Required)
+   - Question 3: "Phone Number" (Short answer)
+   - Question 4: "Country" (Dropdown with options: Japan, USA, UK, Canada, Australia, Germany, France, Other)
+   - Question 5: "How did you hear about us?" (Multiple choice: Website, Social Media, Friend, Event, News, Other)
+   - Question 6: "Additional Comments" (Paragraph)
+
+STEP 2: Customize the Form Design
+----------------------------------
+1. Click the palette icon at the top
+2. Choose a color scheme (purple to match your website)
+3. Click "Preview" to see how it looks
+
+STEP 3: Get the Form Link
+--------------------------
+1. Click "Send" button at the top
+2. Click the link icon (<>)
+3. Click "COPY" to copy the form URL
+4. It will look like: https://forms.gle/XXXXXXXX
+
+STEP 4: Update Your Website Button
+-----------------------------------
+Open index.html and change the button link:
+
+From:
+<a href="signup.html" class="waiting-list-btn" data-translate="waiting_list_btn">
+
+To:
+<a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="waiting-list-btn" data-translate="waiting_list_btn">
+
+STEP 5: View Responses (Automatic Excel Export!)
+-------------------------------------------------
+1. In your Google Form, click "Responses" tab
+2. Click the green Sheets icon to create a spreadsheet
+3. All responses will automatically appear in this Google Sheet
+4. To export to Excel: File → Download → Microsoft Excel (.xlsx)
+
+STEP 6: Email Notifications
+----------------------------
+1. In your Google Form, click the three dots menu
+2. Select "Get email notifications for new responses"
+3. You'll receive an email every time someone submits!
+
+PROS OF GOOGLE FORMS
+---------------------
+✓ Zero setup - works in 5 minutes
+✓ Automatic save to Google Sheets
+✓ Easy Excel export
+✓ Built-in spam protection
+✓ Mobile responsive
+✓ Free forever
+✓ Automatic timestamp
+✓ Email notifications
+✓ No coding needed
+
+CONS
+----
+✗ Takes users to Google's page (not your custom page)
+✗ Less control over design
+
+IF YOU WANT CUSTOM DESIGN
+--------------------------
+Use the signup.html page I created + Formspree (see formspree-setup.txt)
+
+RECOMMENDATION
+--------------
+- Need it working NOW? → Use Google Forms (5 minutes setup)
+- Want custom branded page? → Use signup.html + Formspree (10 minutes setup)

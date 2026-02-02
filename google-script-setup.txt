@@ -1,0 +1,148 @@
+SETUP INSTRUCTIONS FOR GOOGLE SHEETS INTEGRATION
+================================================
+
+Follow these steps to connect your signup form to Google Sheets:
+
+STEP 1: Create a Google Sheet
+------------------------------
+1. Go to https://sheets.google.com
+2. Create a new spreadsheet
+3. Name it "Navi-ken Waiting List"
+4. In the first row, add these headers:
+   A1: Timestamp
+   B1: Name
+   C1: Email
+   D1: Phone
+   E1: Country
+   F1: Interest
+   G1: Message
+
+STEP 2: Create Google Apps Script
+----------------------------------
+1. In your Google Sheet, click "Extensions" → "Apps Script"
+2. Delete any existing code
+3. Copy and paste the following script:
+
+```javascript
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    
+    // Get form data from parameters
+    const timestampISO = e.parameter.timestamp || new Date().toISOString();
+    const name = e.parameter.name || '';
+    const email = e.parameter.email || '';
+    const phone = e.parameter.phone || '';
+    const country = e.parameter.country || '';
+    const interest = e.parameter.interest || '';
+    const message = e.parameter.message || '';
+    
+    // Convert timestamp to Japan time (JST)
+    const date = new Date(timestampISO);
+    const japanTime = Utilities.formatDate(date, 'Asia/Tokyo', 'yyyy-MM-dd HH:mm:ss');
+    
+    // Append data to sheet
+    sheet.appendRow([
+      japanTime,
+      name,
+      email,
+      phone,
+      country,
+      interest,
+      message
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({
+      'status': 'success'
+    })).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      'status': 'error',
+      'message': error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+```
+
+STEP 3: Deploy the Script
+--------------------------
+1. Click "Deploy" → "New deployment"
+2. Click the gear icon ⚙️ and select "Web app"
+3. Fill in the following:
+   - Description: "Navi-ken Waiting List Form"
+   - Execute as: "Me"
+   - Who has access: "Anyone"
+4. Click "Deploy"
+5. You'll need to authorize the script:
+   - Click "Authorize access"
+   - Choose your Google account
+   - Click "Advanced" → "Go to [project name] (unsafe)"
+   - Click "Allow"
+6. Copy the "Web app URL" (it will look like: https://script.google.com/macros/s/XXXXX/exec)
+
+STEP 4: Update the Signup Form
+-------------------------------
+1. Open signup.html
+2. Find the line that says: const response = await fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', {
+3. Replace 'YOUR_GOOGLE_SCRIPT_URL_HERE' with your actual Web app URL from Step 3
+
+STEP 5: Test
+------------
+1. Open signup.html in your browser
+2. Fill out the form
+3. Submit
+4. Check your Google Sheet - a new row should appear with the data
+
+EXPORTING TO EXCEL
+------------------
+To export your data to Excel:
+1. In Google Sheets, click "File" → "Download" → "Microsoft Excel (.xlsx)"
+2. The file will download with all your waiting list data
+
+TROUBLESHOOTING
+---------------
+- If the form doesn't submit, check the browser console for errors (F12)
+- Make sure the Google Apps Script is deployed with "Anyone" access
+- Make sure you copied the correct Web app URL
+- The form uses 'no-cors' mode, so you won't see errors in console but data will still be saved
+
+ADDITIONAL FEATURES
+-------------------
+You can add email notifications by modifying the Google Apps Script to send an email when someone signs up:
+
+```javascript
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    const data = JSON.parse(e.postData.contents);
+    
+    sheet.appendRow([
+      data.timestamp,
+      data.name,
+      data.email,
+      data.phone,
+      data.country,
+      data.interest,
+      data.message
+    ]);
+    
+    // Send email notification
+    MailApp.sendEmail({
+      to: 'searc.oist@gmail.com',
+      subject: 'New Waiting List Signup',
+      body: `New signup:\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nCountry: ${data.country}\nHow they heard: ${data.interest}\nMessage: ${data.message}`
+    });
+    
+    return ContentService.createTextOutput(JSON.stringify({
+      'status': 'success'
+    })).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      'status': 'error',
+      'message': error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+```

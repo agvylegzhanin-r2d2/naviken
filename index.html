@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabi-ken - Adaptive Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="lang-toggle" class="lang-button">
+            <span class="lang-en">🇯🇵 日本語</span>
+            <span class="lang-ja" style="display: none;">🇺🇸 English</span>
+        </button>
+    </div>
+
+    <!-- Floating Navigation Menu -->
+    <nav class="floating-nav">
+        <ul class="nav-menu">
+            <li><a href="#hero" title="Home" data-en="Home" data-ja="ホーム">Home</a></li>
+            <li><a href="#mission" title="Our Mission" data-en="Mission" data-ja="ミッション">Mission</a></li>
+            <li><a href="#how-it-works" title="How it Works" data-en="How it Works" data-ja="仕組み">How it Works</a></li>
+            <li><a href="#prototype" title="Our Device" data-en="Our Device" data-ja="デバイス">Our Device</a></li>
+            <li><a href="#why-choose" title="Why Navi-ken" data-en="Why Navi-ken" data-ja="Navi-kenを選ぶ理由">Why Navi-ken</a></li>
+            <li><a href="#use-cases" title="Future Use Cases" data-en="Use Cases" data-ja="活用事例">Use Cases</a></li>
+            <li><a href="#team" title="Our Team" data-en="Team" data-ja="チーム">Team</a></li>
+            <li><a href="#partners" title="Partners" data-en="Partners" data-ja="パートナー">Partners</a></li>
+            <li><a href="#contact" title="Contact" data-en="Contact" data-ja="お問い合わせ">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="imgs/top_pic.png" alt="Nabi-ken - Vibrational technologies for visually impaired">
+                </div>
+                <div class="hero-text-content">
+                    <div class="hero-logo">
+                        <img src="imgs/nabi_ken_logo_transp.png" alt="Navi-ken Logo">
+                    </div>
+                    <h1 class="hero-title">Navi-ken.</h1>
+                    <p class="hero-subtitle"><strong data-translate="hero_subtitle">Your digital guide dog inside shopping malls, stores and train stations</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <h2 class="section-title" data-translate="mission_title">Our mission</h2>
+            <div class="mission-content">
+                <div class="mission-text-wrapper">
+                    <p class="mission-text" data-translate="mission_text1">Visually impaired people struggle when going outside, travelling & shopping alone:</p>
+                    <p class="mission-highlight" data-translate="mission_text2"><strong>We provide solution for independent enjoyable shopping, travel & leisure without assistance!</strong></p>
+                </div>
+                <div class="mission-image">
+                    <img src="imgs/problem_pic.png" alt="Indoor navigation problem for visually impaired" data-img-en="imgs/problem_pic.png" data-img-ja="imgs/problem_Jap.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How does it work -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-translate="how_title">How does it work?</h2>
+            <div class="how-it-works-content">
+                <div class="how-it-works-images">
+                    <div class="how-visual-item">
+                        <img src="imgs/solution_scheme.png" alt="Indoor navigation solution">
+                    </div>
+                    <div class="how-visual-item">
+                        <img src="imgs/wristband model.png" alt="Wristband with UWB technology">
+                    </div>
+                </div>
+                <div class="how-it-works-text">
+                    <div>
+                        <p class="text-heading" data-translate="how_heading">UWB anchors provide precise location in the mall inside the mall or in a particular store</p>
+                        <ul class="features-inline-list">
+                            <li data-translate="feature1">Operates <strong>without network connectivity</strong></li>
+                            <li data-translate="feature8">Intimate (nobody knows you are using it)</li>
+                            <li data-translate="feature2"><strong>No phone needed</strong></li>
+                            <li data-translate="feature3">UWB range 1cm – 50m</li>
+                            <li data-translate="feature4"><strong>AI positioning</strong></li>
+                            <li data-translate="feature5">Intuitive haptic feedback</li>
+                            <li data-translate="feature6"><strong>Voice to vibration</strong></li>
+                            <li data-translate="feature7"><strong>Hearing unoccupied!</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-list" style="display: none;">
+                <ul>
+                    <li>Operates <strong>without network connectivity</strong></li>
+                    <li><strong>No phone needed</strong></li>
+                    <li>UWB range 1cm – 50m</li>
+                    <li><strong>AI positioning</strong></li>
+                    <li>Intuitive haptic feedback</li>
+                    <li><strong>Voice to vibration</strong></li>
+                    <li><strong>Hearing unoccupied!</strong></li>
+                    <li>Intimate (nobody knows you are using it)</li>
+                </ul>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p data-translate="how_step1">Say by voice where you want to go</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p data-translate="how_step2">Vibrations will guide you towards the desired area</p>
+                </div>
+            </div>
+            <p class="highlight-text" data-translate="how_highlight_text"><strong>It is simply a new sense</strong> and your brain adapts to it through practicing, so it becomes very intuitive to navigate with it.</p>
+        </div>
+    </section>
+
+    <!-- How does it look like -->
+    <section class="prototype" id="prototype">
+        <div class="container">
+            <h2 class="section-title" data-translate="prototype_title">How does it look like?</h2>
+            <p class="prototype-text" data-translate="prototype_text">We are iteratively working on our prototype to make it better every time. We are currently finishing the <strong>beta MVP</strong>.</p>
+            <div class="prototype-gallery">
+                <div class="prototype-card">
+                    <img src="imgs/mvp_picture.png" alt="Nabi-ken wearable device MVP">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why choosing Navi-ken -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <h2 class="section-title" data-translate="why_title">Why choosing Navi-ken for navigation</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><img src="imgs/phone.jpg" alt="No screen needed"></div>
+                    <p data-translate="why_benefit1"><strong>No screen needed!</strong></p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><img src="imgs/brain.jpg" alt="Simple to learn"></div>
+                    <p data-translate="why_benefit2"><strong>Simple to learn and use</strong></p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><img src="imgs/ear.png" alt="Hearing free"></div>
+                    <p data-translate="why_benefit3"><strong>Hearing is left unoccupied!</strong></p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="48" fill="none" stroke="#000" stroke-width="4"/>
+                            <path d="M 28 38 Q 35 32 42 38" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 58 38 Q 65 32 72 38" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 30 62 Q 50 78 70 62" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <p data-translate="why_benefit4"><strong>Less mental load</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future use cases -->
+    <section class="use-cases" id="use-cases">
+        <div class="container">
+            <h2 class="section-title" data-translate="usecases_title">Future use cases</h2>
+            <p class="use-cases-intro" data-translate="usecases_intro">We are actively advancing R&D to expand the potential applications of our technology.</p>
+            <div class="use-case-hazard-group">
+                <div class="hazard-images">
+                    <div class="hazard-item">
+                        <div class="use-case-icon">
+                            <img src="imgs/safe_1.png" alt="Hazard awareness">
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <div class="use-case-icon">
+                            <img src="imgs/safe_2.png" alt="Hazard awareness">
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <div class="use-case-icon">
+                            <img src="imgs/safe_3.png" alt="Hazard awareness">
+                        </div>
+                    </div>
+                </div>
+                <p class="hazard-text" data-translate="usecases_hazard">Hazard places awareness</p>
+            </div>
+            <div class="use-case-list">
+                <div class="use-case-wrapper">
+                    <div class="use-case-item">
+                        <div class="use-case-icon">
+                            <img src="imgs/robot_arm.png" alt="Industrial applications">
+                        </div>
+                    </div>
+                    <p class="use-case-description" data-translate="usecases_industrial">Industrial and factory safety applications with UWB positioning</p>
+                </div>
+                <div class="use-case-wrapper">
+                    <div class="use-case-item">
+                        <div class="use-case-icon">
+                            <img src="imgs/outdoor_navi.png" alt="Outdoor navigation">
+                        </div>
+                    </div>
+                    <p class="use-case-description" data-translate="usecases_outdoor">Haptic outdoor navigation through integration with GPS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title" data-translate="team_title">Meet Our Team</h2>
+            <p class="team-intro" data-translate="team_intro"><strong>We do our best to let our product help as many people as possible.</strong></p>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="imgs/Alex .png" alt="Alexey Vylegzhanin">
+                    </div>
+                    <h3 class="member-name">Alexey Vylegzhanin, PhD</h3>
+                    <p class="member-description" data-translate="team_alex_description">Making the final product and delivering it to customers.</p>
+                    <a href="https://www.linkedin.com/in/alexey-vylegzhanin-443266175/" target="_blank" class="linkedin-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="imgs/Sergey.png" alt="Sergey Zobnin">
+                    </div>
+                    <h3 class="member-name">Sergey Zobnin, PhD</h3>
+                    <p class="member-description" data-translate="team_sergey_description">Coding the insane amount of lines to help you navigate.</p>
+                    <a href="https://www.linkedin.com/in/sergey-zobnin-441a69230/" target="_blank" class="linkedin-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Backed by OIST Innovation -->
+    <section class="backed-by" id="backed-by">
+        <div class="container">
+            <h2 class="section-title" data-translate="backed_by_title">Backed by OIST Innovation</h2>
+            <div class="backed-by-content">
+                <div class="backed-by-logo">
+                    <img src="imgs/oist_inno.png" alt="OIST Innovation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="section-title" data-translate="partners_title">Our Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="imgs/fujitsu.png" alt="Fujitsu Launchpad">
+                </div>
+                <div class="partner-logo">
+                    <img src="imgs/vpc_asia.png" alt="VPC Asia">
+                </div>
+                <div class="partner-logo">
+                    <img src="imgs/nexculture.jpg" alt="Nexculture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <a href="signup.html" class="waiting-list-btn" data-translate="waiting_list_btn">
+                Sign up for waiting list
+            </a>
+            <h2 class="section-title" data-translate="contact_title">Contact us:</h2>
+            <div class="contact-info">
+                <p class="contact-email">
+                    <a href="mailto:search.oist@gmail.com">search.oist@gmail.com</a>
+                </p>
+                <p class="contact-address">
+                    Japan, Okinawa, Tancha 1919-1,<br>
+                    OIST Graduate University
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-copyright" data-translate="footer_copyright">&copy; 2026 Navi-ken. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

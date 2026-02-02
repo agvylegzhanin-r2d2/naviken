@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Optional: keep these if you want to share setup docs
+# formspree-setup.txt
+# google-script-setup.txt

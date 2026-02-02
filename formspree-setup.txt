@@ -1,0 +1,80 @@
+FORMSPREE SETUP INSTRUCTIONS (MUCH EASIER!)
+============================================
+
+Formspree is a free service that collects form submissions and sends them to your email.
+You can export all submissions to Excel/CSV.
+
+STEP 1: Sign up for Formspree (FREE)
+-------------------------------------
+1. Go to https://formspree.io/
+2. Click "Get Started" or "Sign Up"
+3. Create a free account (you can use your searc.oist@gmail.com email)
+4. Verify your email
+
+STEP 2: Create a New Form
+--------------------------
+1. After logging in, click "New Project" (or you'll be prompted to create one)
+2. Name your project: "Navi-ken Waiting List"
+3. Click "New Form"
+4. Name your form: "Waiting List Signup"
+5. Copy your Form ID (it looks like: xyzabc12)
+
+STEP 3: Update signup.html
+---------------------------
+1. Open signup.html
+2. Find this line (around line 164):
+   const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+3. Replace YOUR_FORM_ID with your actual Form ID from Step 2
+   Example: 'https://formspree.io/f/xyzabc12'
+
+STEP 4: Test Your Form
+-----------------------
+1. Save signup.html
+2. Open your website: http://localhost:8080
+3. Click "Sign up for waiting list"
+4. Fill out and submit the form
+5. Check your email - you'll receive the submission!
+
+VIEWING SUBMISSIONS
+-------------------
+1. Log in to https://formspree.io/
+2. Go to your "Waiting List Signup" form
+3. Click "Submissions" to see all entries
+4. You can view each submission with all the details
+
+EXPORTING TO EXCEL
+------------------
+1. In Formspree dashboard, go to your form
+2. Click "Submissions"
+3. Click "Export" button
+4. Choose CSV format
+5. Open the CSV file in Excel
+
+FREE PLAN LIMITS
+----------------
+- 50 submissions per month (FREE)
+- Unlimited forms
+- Email notifications
+- CSV export
+- If you need more, upgrade to paid plan ($10/month for 1000 submissions)
+
+FEATURES INCLUDED
+-----------------
+✓ Automatic email notifications to searc.oist@gmail.com
+✓ Spam filtering
+✓ All form data stored securely
+✓ Easy CSV/Excel export
+✓ No coding required
+✓ Works instantly
+
+ALTERNATIVE: Direct Email Setup (No Formspree needed)
+------------------------------------------------------
+If you prefer to receive emails directly without any service, you can also use:
+
+1. Update the form action in signup.html to:
+   <form id="signupForm" action="mailto:searc.oist@gmail.com" method="post" enctype="text/plain">
+
+2. This will open the user's email client with the form data
+   (Less user-friendly, but requires zero setup)
+
+RECOMMENDED: Use Formspree - it's free, easy, and professional!
