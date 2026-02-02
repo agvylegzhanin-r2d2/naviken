@@ -1206,7 +1206,6 @@ a, button {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    overflow: hidden;
 }
 
 .backed-by-logo:hover {
@@ -1220,7 +1219,6 @@ a, button {
     max-height: 280px;
     height: auto;
     object-fit: contain;
-    transform: scale(1.5);
 }
 
 .partners {
@@ -1259,7 +1257,6 @@ a, button {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    overflow: hidden;
 }
 
 .partner-logo:hover {
@@ -1274,7 +1271,6 @@ a, button {
     width: auto;
     height: auto;
     object-fit: contain;
-    transform: scale(1.5);
 }
 
 /* Contact */
