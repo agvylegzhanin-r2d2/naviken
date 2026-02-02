@@ -816,6 +816,11 @@ body::after {
     object-fit: contain;
 }
 
+/* First use case image 1.5x bigger inside same frame */
+.hazard-item:first-child .use-case-icon img {
+    transform: scale(1.5);
+}
+
 .hazard-text {
     text-align: center;
     font-size: 18px;
