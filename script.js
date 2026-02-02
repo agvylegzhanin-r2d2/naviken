@@ -50,20 +50,23 @@ function initMobileMenu() {
         navBackdrop.addEventListener('click', closeMobileNav);
     }
 
-    // Smooth scroll behavior for anchor links + close mobile menu on nav link click
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            closeMobileNav();
-            var target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // Anchor links: scroll to section and close mobile menu (delegated so nav links work on mobile)
+    document.body.addEventListener('click', function (e) {
+        var link = e.target && e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        e.stopPropagation();
+        var target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        setTimeout(closeMobileNav, 350);
+    }, true);
 }
 
 if (document.readyState === 'loading') {

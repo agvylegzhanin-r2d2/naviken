@@ -1421,11 +1421,19 @@ a, button {
         transform: translateX(0);
         box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
         z-index: 1002;
+        pointer-events: auto;
     }
 
     .floating-nav {
         display: flex;
         flex-direction: column;
+        pointer-events: auto;
+    }
+
+    .floating-nav .nav-menu a {
+        pointer-events: auto;
+        cursor: pointer;
+        touch-action: manipulation;
     }
 
     .floating-nav .nav-menu {
