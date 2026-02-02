@@ -1,7 +1,52 @@
-// Smooth scroll behavior for anchor links
+// Mobile menu toggle (startup-style hamburger)
+const menuToggle = document.getElementById('menu-toggle');
+const floatingNav = document.getElementById('floating-nav');
+const navBackdrop = document.getElementById('nav-backdrop');
+
+function openMobileNav() {
+    if (!floatingNav || !navBackdrop || !menuToggle) return;
+    floatingNav.classList.add('is-open');
+    navBackdrop.classList.add('is-visible');
+    menuToggle.classList.add('is-open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+    if (!floatingNav || !navBackdrop || !menuToggle) return;
+    floatingNav.classList.remove('is-open');
+    navBackdrop.classList.remove('is-visible');
+    menuToggle.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = '';
+}
+
+function toggleMobileNav() {
+    if (floatingNav && floatingNav.classList.contains('is-open')) {
+        closeMobileNav();
+    } else {
+        openMobileNav();
+    }
+}
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleMobileNav();
+    });
+}
+
+if (navBackdrop) {
+    navBackdrop.addEventListener('click', closeMobileNav);
+}
+
+// Smooth scroll behavior for anchor links + close mobile menu on nav link click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        closeMobileNav();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({

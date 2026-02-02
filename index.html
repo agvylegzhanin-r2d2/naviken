@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Navi-ken - Adaptive Technology</title>
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,8 +21,18 @@
         </button>
     </div>
 
+    <!-- Mobile menu button (top right) -->
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+    </button>
+
+    <!-- Backdrop when mobile nav is open -->
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
     <!-- Floating Navigation Menu -->
-    <nav class="floating-nav">
+    <nav class="floating-nav" id="floating-nav">
         <ul class="nav-menu">
             <li><a href="#hero" title="Home" data-en="Home" data-ja="ホーム">Home</a></li>
             <li><a href="#mission" title="Our Mission" data-en="Mission" data-ja="ミッション">Mission</a></li>
