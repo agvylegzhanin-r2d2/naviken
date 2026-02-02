@@ -1201,11 +1201,12 @@ a, button {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 280px;
+    height: 180px;
     max-width: 450px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
 }
 
 .backed-by-logo:hover {
@@ -1216,7 +1217,8 @@ a, button {
 
 .backed-by-logo img {
     max-width: 100%;
-    max-height: 280px;
+    max-height: 100%;
+    width: auto;
     height: auto;
     object-fit: contain;
 }
@@ -1253,10 +1255,11 @@ a, button {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 280px;
+    height: 180px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
 }
 
 .partner-logo:hover {
@@ -1267,7 +1270,7 @@ a, button {
 
 .partner-logo img {
     max-width: 100%;
-    max-height: 280px;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -1743,21 +1746,13 @@ a, button {
 
     .partner-logo {
         padding: 12px;
-        min-height: 220px;
-    }
-
-    .partner-logo img {
-        max-height: 220px;
+        height: 150px;
     }
 
     .backed-by-logo {
         padding: 15px;
-        min-height: 220px;
+        height: 150px;
         max-width: 100%;
-    }
-
-    .backed-by-logo img {
-        max-height: 220px;
     }
 }
 
