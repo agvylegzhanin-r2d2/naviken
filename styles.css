@@ -773,9 +773,10 @@ body::after {
 .hazard-images {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 40px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .hazard-item {
@@ -783,6 +784,7 @@ body::after {
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    flex: 0 0 auto;
     background: white;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -796,20 +798,17 @@ body::after {
     border-color: var(--primary-color);
 }
 
-.hazard-item:first-child {
-    padding: 20px;
-}
-
-.hazard-item:first-child .use-case-icon {
-    width: 480px;
-    height: 320px;
+/* All hazard-item frames (pictures 1, 2, 3) same size as use-case-item (4, 5) */
+.hazard-item .use-case-icon {
+    width: 300px;
+    height: 200px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.hazard-item:first-child .use-case-icon img {
+.hazard-item .use-case-icon img {
     max-width: 100%;
     max-height: 100%;
     width: auto;
@@ -874,11 +873,14 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .use-case-icon img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
 }
 
@@ -1259,6 +1261,8 @@ body::after {
 @media (max-width: 1024px) {
     .hazard-images {
         gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .use-case-list {
@@ -1426,19 +1430,16 @@ body::after {
 
     .hazard-images {
         gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .hazard-item {
         padding: 20px;
     }
     
-    .hazard-item:first-child {
-        padding: 15px;
-    }
-    
-    .hazard-item:first-child .use-case-icon {
-        width: 360px;
-        height: 240px;
+    .hazard-item {
+        padding: 20px;
     }
     
     .use-case-list {
@@ -1581,13 +1582,8 @@ body::after {
         height: 120px;
     }
     
-    .hazard-item:first-child {
+    .hazard-item {
         padding: 12px;
-    }
-    
-    .hazard-item:first-child .use-case-icon {
-        width: 300px;
-        height: 200px;
     }
     
     .use-case-description {
