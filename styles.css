@@ -1533,7 +1533,7 @@ a, button {
     .hero-title-row {
         order: 2;
         gap: 12px;
-        margin-bottom: 4px;
+        margin-bottom: 0;
         margin-top: -8px;
     }
 
@@ -1543,7 +1543,7 @@ a, button {
 
     .hero-subtitle {
         order: 3;
-        margin-top: -4px;
+        margin-top: -12px;
     }
 
     .hero-image {
@@ -1722,11 +1722,11 @@ a, button {
 
     .hero-title-row {
         gap: 10px;
-        margin-bottom: 4px;
+        margin-bottom: 0;
     }
 
     .hero-subtitle {
-        margin-top: -4px;
+        margin-top: -12px;
     }
 
     .hero-logo img {
