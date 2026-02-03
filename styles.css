@@ -457,7 +457,7 @@ a, button {
 }
 
 .hero-apple-badge img {
-    height: 32px;
+    height: 320px;
     width: auto;
     display: block;
 }
@@ -490,8 +490,8 @@ a, button {
 
 .hero-logo img {
     width: auto;
-    height: 56px;
-    max-height: 56px;
+    height: 168px;
+    max-height: 168px;
     display: block;
 }
 
@@ -1527,7 +1527,7 @@ a, button {
     }
 
     .hero-apple-badge img {
-        height: 28px;
+        height: 280px;
     }
 
     .hero-title-row {
@@ -1541,8 +1541,8 @@ a, button {
     }
 
     .hero-logo img {
-        height: 44px;
-        max-height: 44px;
+        height: 132px;
+        max-height: 132px;
         width: auto;
     }
 
@@ -1703,7 +1703,7 @@ a, button {
     }
 
     .hero-apple-badge img {
-        height: 24px;
+        height: 240px;
     }
 
     .hero-title-row {
@@ -1712,8 +1712,8 @@ a, button {
     }
 
     .hero-logo img {
-        height: 36px;
-        max-height: 36px;
+        height: 108px;
+        max-height: 108px;
         width: auto;
     }
 
