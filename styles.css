@@ -449,28 +449,50 @@ a, button {
     align-items: center;
 }
 
+.hero-apple-badge {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-apple-badge img {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+.hero-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -2px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
 .hero-logo {
-    margin-bottom: 0px;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .hero-logo img {
-    width: 100%;
-    max-width: 563px;
-    height: auto;
+    width: auto;
+    height: 56px;
+    max-height: 56px;
     display: block;
-}
-
-.hero-title {
-    font-size: 72px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    margin-top: -10px;
-    letter-spacing: -2px;
-    color: #ffffff;
-    line-height: 1.1;
 }
 
 .hero-subtitle {
@@ -1504,13 +1526,24 @@ a, button {
         text-align: center;
     }
 
+    .hero-apple-badge img {
+        height: 28px;
+    }
+
+    .hero-title-row {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
     .hero-logo {
-        margin-bottom: 0px;
+        margin: 0;
         justify-content: center;
     }
 
     .hero-logo img {
-        width: 450px;
+        height: 44px;
+        max-height: 44px;
+        width: auto;
     }
 
     .hero-title {
@@ -1669,8 +1702,19 @@ a, button {
         padding: 40px 0 40px;
     }
 
+    .hero-apple-badge img {
+        height: 24px;
+    }
+
+    .hero-title-row {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
     .hero-logo img {
-        max-width: min(375px, 100%);
+        height: 36px;
+        max-height: 36px;
+        width: auto;
     }
 
     .hero-title {
