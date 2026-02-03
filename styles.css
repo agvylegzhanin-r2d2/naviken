@@ -1524,17 +1524,17 @@ a, button {
         display: contents;
     }
 
-    .hero-title-row {
+    .hero-apple-badge {
         order: 1;
-        gap: 12px;
-        margin-bottom: 4px;
+        justify-content: center;
+        margin-bottom: -8px;
     }
 
-    .hero-apple-badge {
+    .hero-title-row {
         order: 2;
-        justify-content: center;
+        gap: 12px;
+        margin-bottom: 4px;
         margin-top: -8px;
-        margin-bottom: -8px;
     }
 
     .hero-apple-badge img {
