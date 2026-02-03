@@ -424,6 +424,9 @@ a, button {
     align-items: center;
     gap: 48px;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-brand {
@@ -481,12 +484,16 @@ a, button {
     justify-content: center;
     align-items: flex-end;
     gap: 32px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero-product-item {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    flex: 0 1 auto;
+    min-width: 0;
 }
 
 .hero-product-item img {
@@ -494,6 +501,7 @@ a, button {
     height: 180px;
     max-width: 100%;
     object-fit: contain;
+    display: block;
 }
 
 .hero-subtitle strong {
@@ -1525,11 +1533,19 @@ a, button {
     }
 
     .hero-products {
+        flex-direction: column;
+        align-items: center;
         gap: 24px;
+    }
+
+    .hero-product-item {
+        width: 100%;
+        max-width: 280px;
     }
 
     .hero-product-item img {
         height: 140px;
+        max-width: 100%;
     }
 
     .hero-text {
@@ -1698,11 +1714,18 @@ a, button {
     }
 
     .hero-products {
-        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hero-product-item {
+        max-width: 260px;
     }
 
     .hero-product-item img {
         height: 100px;
+        max-width: 100%;
     }
 
     .section-title {

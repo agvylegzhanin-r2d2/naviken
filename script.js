@@ -331,7 +331,7 @@ function switchLanguage(lang) {
     
     // Update navigation
     document.querySelectorAll('.nav-menu a').forEach((link, index) => {
-        const keys = ['nav_home', 'nav_mission', 'nav_how', 'nav_prototype', 'nav_why', 'nav_usecases', 'nav_team', 'nav_partners', 'nav_contact'];
+        const keys = ['nav_home', 'nav_mission', 'nav_how', 'nav_prototype', 'nav_why', 'nav_usecases', 'nav_team', 'nav_contact'];
         if (keys[index]) {
             link.textContent = translations[lang][keys[index]];
         }
