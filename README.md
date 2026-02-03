@@ -51,7 +51,7 @@ srch/
 5. **Future Use Cases** - Potential applications
 6. **Why Choose Search** - Key benefits
 7. **Meet Our Team** - Team member profiles
-8. **Partners** - Partners and collaborators
+8. **Connected to** - Organizations we're connected to
 9. **Contact** - Contact information
 
 ## Browser Support

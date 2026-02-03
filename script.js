@@ -75,34 +75,42 @@ if (document.readyState === 'loading') {
     initMobileMenu();
 }
 
-// Highlight active navigation item on scroll
+// Highlight active navigation item using IntersectionObserver (no scroll handler = smoother mobile scroll)
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
-function highlightActiveSection() {
-    let scrollPosition = window.scrollY + 150;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
+function setActiveNav(sectionId) {
+    navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + sectionId);
     });
 }
 
-// Run on scroll (passive for better mobile scroll performance)
-window.addEventListener('scroll', highlightActiveSection, { passive: true });
+var activeSectionObserver = new IntersectionObserver(
+    function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.getAttribute('id');
+            if (id) setActiveNav(id);
+        });
+    },
+    { rootMargin: '-15% 0px -70% 0px', threshold: 0 }
+);
 
-// Run on page load
-window.addEventListener('load', highlightActiveSection);
+sections.forEach(function (section) {
+    activeSectionObserver.observe(section);
+});
+
+// Set initial active section on load
+window.addEventListener('load', function () {
+    var scrollY = window.scrollY + 100;
+    sections.forEach(function (section) {
+        var top = section.offsetTop;
+        var bottom = top + section.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+            setActiveNav(section.getAttribute('id'));
+        }
+    });
+});
 
 // Add scroll animation for sections
 const observerOptions = {
@@ -220,8 +228,8 @@ const translations = {
         // Backed by
         backed_by_title: 'Backed by OIST Innovation',
         
-        // Partners
-        partners_title: 'Our Partners',
+        // Connected to
+        partners_title: 'Connected to',
         
         // Contact
         contact_title: 'Contact us:',
@@ -304,8 +312,8 @@ const translations = {
         // Backed by
         backed_by_title: 'OIST Innovationの支援',
         
-        // Partners
-        partners_title: 'パートナー企業',
+        // Connected to
+        partners_title: 'つながり',
         
         // Contact
         contact_title: 'お問い合わせ：',

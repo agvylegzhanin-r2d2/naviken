@@ -96,6 +96,28 @@ body::after {
     }
 }
 
+/* Mobile scroll performance: disable smooth scroll and background animations */
+@media (max-width: 768px) {
+    body {
+        scroll-behavior: auto;
+    }
+    body::before {
+        animation: none;
+        background-position: 0% 50%;
+    }
+    body::after {
+        animation: none;
+    }
+    .hero::before,
+    .hero::after {
+        animation: none;
+    }
+    section {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 400px;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1180,7 +1202,7 @@ a, button {
     height: 20px;
 }
 
-/* Partners */
+/* Connected to */
 /* Backed by Section */
 .backed-by {
     padding: 80px 0;
