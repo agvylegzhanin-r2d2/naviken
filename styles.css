@@ -1513,26 +1513,37 @@ a, button {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 40px;
-    }
-
-    .hero-image {
-        order: 1;
+        text-align: center;
     }
 
     .hero-text-content {
+        display: contents;
+    }
+
+    .hero-title-row {
+        order: 1;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+        order: 1;
+    }
+
+    .hero-image {
         order: 2;
-        text-align: center;
+    }
+
+    .hero-apple-badge {
+        order: 3;
+        justify-content: center;
     }
 
     .hero-apple-badge img {
         height: 280px;
-    }
-
-    .hero-title-row {
-        gap: 12px;
-        margin-bottom: 12px;
     }
 
     .hero-logo img {
