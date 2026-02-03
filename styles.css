@@ -891,6 +891,7 @@ a, button {
     object-fit: contain;
 }
 
+
 /* Use Cases */
 .use-cases {
     padding: 80px 0;
@@ -1529,21 +1530,21 @@ a, button {
         margin-bottom: 12px;
     }
 
-    .hero-subtitle {
-        order: 1;
-    }
-
-    .hero-image {
-        order: 2;
-    }
-
     .hero-apple-badge {
-        order: 3;
+        order: 2;
         justify-content: center;
     }
 
     .hero-apple-badge img {
-        height: 280px;
+        height: 200px;
+    }
+
+    .hero-subtitle {
+        order: 3;
+    }
+
+    .hero-image {
+        order: 4;
     }
 
     .hero-logo img {
