@@ -419,57 +419,27 @@ a, button {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 1;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.hero-text-content {
-    order: 2;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 48px;
+    text-align: center;
 }
 
-.hero-apple-badge {
-    margin-bottom: 12px;
+.hero-brand {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-.hero-apple-badge img {
-    height: 320px;
-    width: auto;
-    display: block;
+    gap: 12px;
 }
 
 .hero-title-row {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 15px;
-    margin-top: -10px;
+    gap: 12px;
+    margin: 0;
 }
 
 .hero-title {
@@ -484,24 +454,46 @@ a, button {
 .hero-logo {
     margin: 0;
     display: flex;
+    align-items: baseline;
     justify-content: center;
-    align-items: center;
 }
 
 .hero-logo img {
     width: auto;
-    height: 168px;
-    max-height: 168px;
+    height: 0.9em;
+    max-height: 72px;
     display: block;
+    vertical-align: baseline;
 }
 
 .hero-subtitle {
     font-size: 24px;
-    margin-bottom: 0;
-    margin-top: 0;
+    margin: 0;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.4;
+    max-width: 640px;
+}
+
+.hero-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 32px;
+}
+
+.hero-product-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-product-item img {
+    width: auto;
+    height: 180px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .hero-subtitle strong {
@@ -1513,37 +1505,15 @@ a, button {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .hero-image {
-        order: 1;
-    }
-
-    .hero-text-content {
-        order: 2;
-        text-align: center;
-    }
-
-    .hero-apple-badge img {
-        height: 280px;
+        gap: 36px;
     }
 
     .hero-title-row {
-        gap: 12px;
-        margin-bottom: 12px;
-    }
-
-    .hero-logo {
-        margin: 0;
-        justify-content: center;
+        gap: 10px;
     }
 
     .hero-logo img {
-        height: 132px;
-        max-height: 132px;
-        width: auto;
+        max-height: 48px;
     }
 
     .hero-title {
@@ -1552,6 +1522,14 @@ a, button {
 
     .hero-subtitle {
         font-size: 20px;
+    }
+
+    .hero-products {
+        gap: 24px;
+    }
+
+    .hero-product-item img {
+        height: 140px;
     }
 
     .hero-text {
@@ -1702,19 +1680,12 @@ a, button {
         padding: 40px 0 40px;
     }
 
-    .hero-apple-badge img {
-        height: 240px;
-    }
-
     .hero-title-row {
-        gap: 10px;
-        margin-bottom: 10px;
+        gap: 8px;
     }
 
     .hero-logo img {
-        height: 108px;
-        max-height: 108px;
-        width: auto;
+        max-height: 36px;
     }
 
     .hero-title {
@@ -1726,8 +1697,12 @@ a, button {
         font-size: 18px;
     }
 
-    .hero-image img {
-        max-width: 100%;
+    .hero-products {
+        gap: 16px;
+    }
+
+    .hero-product-item img {
+        height: 100px;
     }
 
     .section-title {
