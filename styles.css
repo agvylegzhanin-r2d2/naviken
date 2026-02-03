@@ -1527,12 +1527,14 @@ a, button {
     .hero-title-row {
         order: 1;
         gap: 12px;
-        margin-bottom: 12px;
+        margin-bottom: 4px;
     }
 
     .hero-apple-badge {
         order: 2;
         justify-content: center;
+        margin-top: -8px;
+        margin-bottom: -8px;
     }
 
     .hero-apple-badge img {
@@ -1541,6 +1543,7 @@ a, button {
 
     .hero-subtitle {
         order: 3;
+        margin-top: -4px;
     }
 
     .hero-image {
@@ -1712,9 +1715,18 @@ a, button {
         height: 240px;
     }
 
+    .hero-apple-badge {
+        margin-top: -8px;
+        margin-bottom: -8px;
+    }
+
     .hero-title-row {
         gap: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 4px;
+    }
+
+    .hero-subtitle {
+        margin-top: -4px;
     }
 
     .hero-logo img {
