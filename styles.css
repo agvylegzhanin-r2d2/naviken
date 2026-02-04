@@ -1182,8 +1182,15 @@ a, button {
 .member-name {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     color: var(--text-dark);
+}
+
+.member-degree {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 0 0 8px 0;
 }
 
 .member-role {
