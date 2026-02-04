@@ -224,6 +224,7 @@ const translations = {
         team_sergey: 'Sergey Samsonov',
         team_sergey_role: 'Co-Founder & Technical Director',
         team_sergey_description: 'Coding the insane amount of lines to help you navigate.',
+        team_chris_description: 'Most impressive hardware and software developer with experience in prototyping and 3D design.',
         
         // Backed by
         backed_by_title: 'Backed by OIST Innovation',
@@ -308,6 +309,7 @@ const translations = {
         team_sergey: 'セルゲイ・サムソノフ',
         team_sergey_role: '共同創設者＆テクニカルディレクター',
         team_sergey_description: 'ナビゲーションをサポートするための膨大なコード行数を書く。',
+        team_chris_description: 'プロトタイピングと3Dデザインの経験を持つ、最も印象的なハードウェア・ソフトウェア開発者。',
         
         // Backed by
         backed_by_title: 'OIST Innovationの支援',
