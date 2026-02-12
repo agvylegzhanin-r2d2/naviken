@@ -1187,9 +1187,9 @@ a, button {
 }
 
 .member-degree {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-light);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
     margin: 0 0 8px 0;
 }
 
