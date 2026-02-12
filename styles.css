@@ -1391,9 +1391,9 @@ a, button {
 }
 
 /* Footer */
-/* GenbaSense - Coming soon (bottom of Navi-ken page) */
+/* GenbaSense - small card (bottom of Navi-ken page) */
 .genbasense-cta {
-    padding: 48px 0;
+    padding: 40px 0;
     text-align: center;
     background: transparent;
 }
@@ -1402,34 +1402,36 @@ a, button {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 24px 40px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    justify-content: center;
+    gap: 8px;
+    width: 160px;
+    padding: 20px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     text-decoration: none;
-    color: #fff;
-    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--text-dark);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .genbasense-button:hover {
-    background: rgba(255, 255, 255, 0.22);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 
 .genbasense-logo {
-    height: 48px;
+    height: 36px;
     width: auto;
-    max-width: 200px;
+    max-width: 100%;
     object-fit: contain;
     display: block;
 }
 
 .genbasense-label {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    opacity: 0.95;
+    color: var(--text-light);
 }
 
 .footer {
