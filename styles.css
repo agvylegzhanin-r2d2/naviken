@@ -1391,9 +1391,8 @@ a, button {
 }
 
 /* Footer */
-/* GenbaSense - small card (bottom of Navi-ken page) - hidden; access via direct link genbasense.html */
+/* GenbaSense - small card (bottom of Navi-ken page); no link for now */
 .genbasense-cta {
-    display: none;
     padding: 40px 0;
     text-align: center;
     background: transparent;
@@ -1416,7 +1415,14 @@ a, button {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.genbasense-button:hover {
+.genbasense-cta .genbasense-button {
+    cursor: default;
+}
+.genbasense-cta .genbasense-button:hover {
+    transform: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+a.genbasense-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
