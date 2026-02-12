@@ -1391,8 +1391,9 @@ a, button {
 }
 
 /* Footer */
-/* GenbaSense - small card (bottom of Navi-ken page) */
+/* GenbaSense - small card (bottom of Navi-ken page) - hidden; access via direct link genbasense.html */
 .genbasense-cta {
+    display: none;
     padding: 40px 0;
     text-align: center;
     background: transparent;
