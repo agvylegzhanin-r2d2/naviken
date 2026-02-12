@@ -1391,6 +1391,47 @@ a, button {
 }
 
 /* Footer */
+/* GenbaSense - Coming soon (bottom of Navi-ken page) */
+.genbasense-cta {
+    padding: 48px 0;
+    text-align: center;
+    background: transparent;
+}
+
+.genbasense-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.genbasense-button:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.genbasense-logo {
+    height: 48px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+.genbasense-label {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
 .footer {
     padding: 40px 0;
     background: transparent;
