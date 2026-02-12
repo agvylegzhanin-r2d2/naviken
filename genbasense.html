@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#4a5eb8">
-    <title>GenbaSense</title>
+    <meta name="theme-color" content="#2d5a27">
+    <title>GenbaSense – 現場の全作業員のためのデジタル安全感覚</title>
     <link rel="icon" type="image/png" sizes="32x32" href="imgs/logo_nabi_ken.png?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,34 +13,273 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #4a5eb8 0%, #5a3d7a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e4620 0%, #2d5a27 50%, #1a3d1c 100%);
             color: #fff;
+            line-height: 1.6;
         }
-        h1 {
-            font-size: clamp(32px, 8vw, 48px);
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        a { color: rgba(255,255,255,0.95); }
+        .back-link { display: inline-block; margin: 20px 0; font-size: 14px; text-decoration: none; opacity: 0.9; }
+        .back-link:hover { text-decoration: underline; }
+        section { padding: 60px 0; }
+        .section-title {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 700;
+            margin-bottom: 28px;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 7vw, 56px);
             font-weight: 700;
             margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
-        p {
-            font-size: 18px;
-            opacity: 0.9;
+        .hero .tagline {
+            font-size: clamp(18px, 2.5vw, 22px);
+            opacity: 0.95;
+            max-width: 560px;
+            margin: 0 auto;
         }
-        a {
-            color: rgba(255, 255, 255, 0.9);
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
             margin-top: 32px;
-            font-size: 14px;
         }
+        .card {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+        }
+        .card h3 { font-size: 18px; margin-bottom: 12px; font-weight: 700; }
+        .card ul { list-style: none; font-size: 15px; opacity: 0.95; }
+        .card li { padding: 4px 0; padding-left: 1.2em; position: relative; }
+        .card li::before { content: "•"; position: absolute; left: 0; }
+        .card p { font-size: 15px; margin-top: 8px; opacity: 0.95; }
+        .highlight-box {
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 24px 0;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .highlight-box p { font-size: 18px; margin: 0; }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 32px 0;
+        }
+        .stat { text-align: center; }
+        .stat .value { font-size: 28px; font-weight: 700; display: block; }
+        .stat .label { font-size: 14px; opacity: 0.9; }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .team-card {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .team-card .name { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+        .team-card .role { font-size: 13px; opacity: 0.9; }
+        .cta-section { text-align: center; padding: 48px 0; }
+        .cta-section .contact {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .cta-section a[href^="mailto"] { text-decoration: underline; }
+        .roadmap-list { max-width: 560px; margin: 0 auto; }
+        .roadmap-list li { margin: 12px 0; padding-left: 1em; }
     </style>
 </head>
 <body>
-    <h1>GenbaSense</h1>
-    <p>Coming soon.</p>
-    <a href="index.html">&larr; Back to product choice</a>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; 製品選択に戻る</a>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>GenbaSense</h1>
+            <p class="tagline">現場の全作業員のためのデジタル安全感覚！</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">問題</h2>
+            <p style="text-align: center; margin-bottom: 16px;">車両・機械による事故 – 建設現場で最も多い事故。年間1万件から1万7千件の非致死的な負傷事例。</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>直接費用</h3>
+                    <ul>
+                        <li>休業日数分の日給の80%</li>
+                        <li>事故頻発 → 保険料の上昇</li>
+                        <li>重傷に対する補償金 100万円～1,000万円</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>間接費用</h3>
+                    <ul>
+                        <li>生産損失</li>
+                        <li>代替要員のための残業</li>
+                        <li>現場での作業停止</li>
+                        <li>評判の毀損</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p><strong>事故は金銭的リスクです！</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">解決策</h2>
+            <p style="text-align: center; margin-bottom: 24px;">AI UWBアンカーと触覚フィードバック</p>
+            <div class="card-grid">
+                <div class="card">
+                    <ul>
+                        <li>ネットワーク接続なしで動作</li>
+                        <li>UWBの通信距離：1cm～50m</li>
+                        <li>AI位置追跡</li>
+                        <li>即時触覚フィードバック</li>
+                        <li>騒がしい環境でも動作</li>
+                        <li>視認性の悪い環境下でも動作</li>
+                        <li>作業員の移動区域データ分析</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">利益</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>コスト削減</h3>
+                    <p>事故の減少により保険料と補償費を節約。代替品の遅延なし。現場における事故による遅延や作業停止を防止。</p>
+                </div>
+                <div class="card">
+                    <h3>データと適合性</h3>
+                    <p>従業員がより多くの時間を過ごすホットゾーンを収集。ISO45001適合性の証拠、積極的なリスク管理の実証、内部安全会議用データ。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">ハードウェアとソフトウェア</h2>
+            <ul style="max-width: 480px; margin: 0 auto 24px; list-style: none;">
+                <li style="padding: 6px 0;">• 精密な位置特定</li>
+                <li style="padding: 6px 0;">• 識別可能な触覚刺激・複数の触覚パターン</li>
+                <li style="padding: 6px 0;">• ヒトを対象とした研究を実施済み</li>
+                <li style="padding: 6px 0;">• 特許出願</li>
+                <li style="padding: 6px 0;">• ベータ版MVPを3月に予定</li>
+            </ul>
+            <p style="text-align: center; font-size: 15px; opacity: 0.9;">製造コスト：リストバンド1本あたり40～50ドル／アンカー1個あたり10～20ドル</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">競争優位性</h2>
+            <p style="text-align: center; margin-bottom: 24px;">建設現場向けソリューション（建設用ウェアラブルスタートアップ）</p>
+            <div class="card-grid">
+                <div class="card"><h3>衝突事故防止</h3></div>
+                <div class="card"><h3>騒がしく視認性の悪い環境下での作業</h3></div>
+                <div class="card"><h3>日本国内でご利用いただけます</h3></div>
+                <div class="card"><h3>従業員追跡と分析</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">なぜ当社なのか？</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="name">Alexey Vylegzhanin, PhD</div>
+                    <div class="role">ソフトウェア開発15年以上、ハードウェア開発、神経生物学のバックグラウンド、人間の感覚に関する研究</div>
+                </div>
+                <div class="team-card">
+                    <div class="name">Sergey Zobnin, PhD</div>
+                    <div class="role">プロダクトビジョン・ロードマップ策定、顧客開発、物理学バックグラウンド、研究成果のプロダクト化、抹茶ティー定期購読サービスの元共同創業者</div>
+                </div>
+                <div class="team-card">
+                    <div class="name">Keitaro Kuroda, MBA</div>
+                    <div class="role">事業開発、投資家向け広報・資金調達、20年以上のビジネス経験、医療技術・ヘルスケア、元バイオ医薬品スタートアップ共同創業者</div>
+                </div>
+                <div class="team-card">
+                    <div class="name">Christopher Buckley, MSc</div>
+                    <div class="role">ハードウェア・ソフトウェア開発15年以上、プロトタイピング、3Dおよび機械設計、元音響スタートアップ共同創業者</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">市場規模</h2>
+            <p style="text-align: center; margin-bottom: 24px;">年間20万～30万のアクティブサイトと54万台のターゲットマシン（日本）。中堅企業、土木工事、都市プロジェクトにサービス提供。専用のウェアラブル近接安全ソリューションが不足している日本市場。</p>
+            <div class="stats">
+                <div class="stat"><span class="value">$3.6B</span><span class="label">TAM 日本（毎年）</span></div>
+                <div class="stat"><span class="value">$900M</span><span class="label">SAM</span></div>
+                <div class="stat"><span class="value">$50M</span><span class="label">SOM</span></div>
+                <div class="stat"><span class="value">$2M</span><span class="label">沖縄 SOM</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">ロードマップ</h2>
+            <ul class="roadmap-list">
+                <li><strong>01.2026</strong> – リストバンドとアンカーのパイロット試験完了、意向表明書、資金調達 $400K（2年間）</li>
+                <li><strong>03.2026</strong> – ベータ版MVP、特許出願</li>
+                <li><strong>05.2026</strong> – 最終MVPリリース、2～3件のPoC確保</li>
+                <li><strong>08.2027</strong> – 初回限定バッチ、最初の施設契約（約20件）、~$1M/年収益</li>
+                <li><strong>05.2028</strong> – 日本の主要建設会社・重機メーカーとの契約、継続的収益 ~$20M/年</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">資金調達</h2>
+            <p style="text-align: center; margin-bottom: 16px;">過去の資金調達：OISTイノベーションからの$150Kの助成金</p>
+            <p style="text-align: center; margin-bottom: 24px;">J-KISS（日本版SAFE）による $400K プレシードラウンドを、ポストマネー評価額 $2.5M で調達中。製品開発・運営・マーケティングに充当。</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">ご参加ください</h2>
+            <p>ご関心をお寄せいただきありがとうございます！</p>
+            <div class="contact">
+                <p><a href="mailto:a.vylegzhanin@oist.jp">a.vylegzhanin@oist.jp</a></p>
+                <p><a href="mailto:s.zobnin@oist.jp">s.zobnin@oist.jp</a></p>
+                <p><a href="mailto:tds@oist.jp">tds@oist.jp</a></p>
+            </div>
+            <p style="margin-top: 32px;"><a href="index.html" class="back-link">&larr; 製品選択に戻る</a></p>
+        </div>
+    </section>
 </body>
 </html>
