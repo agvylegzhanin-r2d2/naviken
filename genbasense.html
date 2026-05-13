@@ -264,17 +264,28 @@
         .customer-card {
             aspect-ratio: 1;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-end;
             text-align: center;
-            padding: 20px;
+            padding: 14px;
             background: #f7f7f7;
             border-radius: 16px;
             border: 1px solid #e8e8e8;
+            overflow: hidden;
+        }
+        .customer-card-img {
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
         .customer-card h3 {
             margin: 0;
-            font-size: clamp(14px, 1.6vw, 17px);
+            flex-shrink: 0;
+            font-size: clamp(13px, 1.4vw, 16px);
             font-weight: 700;
             color: #1a1a1a;
             line-height: 1.35;
@@ -396,6 +407,20 @@
             border: 2px solid #e0e0e0; border-radius: 14px; background: #fafafa;
         }
         .section-fig-wrap.framed .section-fig { margin: 0; border-radius: 8px; }
+        .solution-figs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 24px auto;
+        }
+        .solution-figs .section-fig-wrap.framed {
+            max-width: 100%;
+            margin: 0;
+        }
+        @media (max-width: 640px) {
+            .solution-figs { grid-template-columns: 1fr; }
+        }
         .benefit-images {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px; margin-top: 28px;
@@ -474,8 +499,8 @@
                     <p class="section-lead" data-i18n="stats_lead">Structural risks on site are measurable—and they compound without new approaches to worker awareness.</p>
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value">17K</div>
-                            <p class="stat-label" data-i18n="stat1_label">Non-fatal injury cases per year in Japan</p>
+                            <div class="stat-value">8000</div>
+                            <p class="stat-label" data-i18n="stat1_label">Non-fatal injury cases per year on construction sites and warehouses</p>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value">80%</div>
@@ -496,10 +521,22 @@
                 <h2 class="section-title" data-i18n="serve_title">Who We Serve</h2>
                 <p class="section-lead" data-i18n="serve_lead">GenbaSense helps site operation companies reduce accidents, insurance costs, and downtime</p>
                 <div class="customer-card-grid">
-                    <div class="customer-card"><h3 data-i18n="serve1_title">Construction sites</h3></div>
-                    <div class="customer-card"><h3 data-i18n="serve2_title">Warehouse operators</h3></div>
-                    <div class="customer-card"><h3 data-i18n="serve3_title">Logistics centers</h3></div>
-                    <div class="customer-card"><h3 data-i18n="serve4_title">Heavy machinery production</h3></div>
+                    <div class="customer-card">
+                        <img src="imgs/constr sites.png" alt="Construction sites" class="customer-card-img">
+                        <h3 data-i18n="serve1_title">Construction sites</h3>
+                    </div>
+                    <div class="customer-card">
+                        <img src="imgs/warehouses.png" alt="Warehouse operators" class="customer-card-img">
+                        <h3 data-i18n="serve2_title">Warehouse operators</h3>
+                    </div>
+                    <div class="customer-card">
+                        <img src="imgs/logistics centers.png" alt="Logistics centers" class="customer-card-img">
+                        <h3 data-i18n="serve3_title">Logistics centers</h3>
+                    </div>
+                    <div class="customer-card">
+                        <img src="imgs/heavy indusrt.png" alt="Heavy machinery production" class="customer-card-img">
+                        <h3 data-i18n="serve4_title">Heavy machinery production</h3>
+                    </div>
                 </div>
             </div>
         </section>
@@ -510,8 +547,13 @@
                 <p class="section-eyebrow" data-i18n="sol_eyebrow">Our approach</p>
                 <h2 class="section-title" data-i18n="sol_title">How Our Technology Works</h2>
                 <p class="section-lead" data-i18n="sol_lead">GenbaSense turns site movement into real-time safety—by detecting proximity, alerting with haptics, and analyzing patterns for continuous improvement.</p>
-                <div class="section-fig-wrap framed">
-                    <img src="imgs/genbasense_images/solution.png" alt="GenbaSense solution – UWB and haptic safety" class="section-fig">
+                <div class="solution-figs">
+                    <div class="section-fig-wrap framed">
+                        <img src="imgs/genbasense_images/solution.png" alt="GenbaSense solution – UWB and haptic safety" class="section-fig">
+                    </div>
+                    <div class="section-fig-wrap framed">
+                        <img src="imgs/crane_cabin_view.png" alt="Crane cabin view" class="section-fig">
+                    </div>
                 </div>
                 <div class="steps">
                     <div class="step">
