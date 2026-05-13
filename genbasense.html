@@ -25,7 +25,7 @@
         a { color: #2d5a27; }
         .back-link { display: inline-block; font-size: 14px; text-decoration: none; color: #555; }
         .back-link:hover { text-decoration: underline; color: #1a1a1a; }
-        section { padding: 64px 0; scroll-margin-top: 72px; }
+        section { padding: 64px 0; scroll-margin-top: 140px; }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
             color: #666; text-align: center; margin-bottom: 10px;
@@ -45,8 +45,8 @@
             z-index: 100;
             background: #fff;
             border-bottom: 1px solid #e8e8e8;
-            padding: 8px clamp(16px, 3vw, 28px);
-            padding-top: max(8px, env(safe-area-inset-top));
+            padding: 12px clamp(24px, 4.5vw, 42px);
+            padding-top: max(12px, env(safe-area-inset-top));
         }
         .info-bar-inner {
             max-width: 1200px;
@@ -54,39 +54,39 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 24px;
             flex-wrap: wrap;
         }
         .info-bar-brand-row {
             display: flex;
             align-items: center;
-            gap: clamp(10px, 2vw, 18px);
+            gap: clamp(15px, 3vw, 27px);
             flex: 1;
             min-width: 0;
         }
         .info-bar-logo {
-            height: clamp(40px, 6vw, 56px);
+            height: clamp(80px, 12vw, 112px);
             width: auto;
-            max-width: 140px;
+            max-width: 280px;
             object-fit: contain;
             flex-shrink: 0;
         }
         .info-bar-text {
             text-align: left;
             color: #1a1a1a;
-            max-width: min(420px, 100%);
+            max-width: min(640px, 100%);
             font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .info-bar-brand {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            font-size: clamp(15px, 2vw, 18px);
+            font-size: clamp(30px, 4vw, 36px);
             font-weight: 600;
             letter-spacing: 0.01em;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             line-height: 1.2;
         }
         .info-bar-sub {
-            font-size: clamp(11px, 1.4vw, 13px);
+            font-size: clamp(22px, 2.8vw, 26px);
             font-weight: 400;
             line-height: 1.4;
             color: #555;
@@ -178,23 +178,44 @@
             overflow: hidden;
         }
         .hero-image-headline {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: clamp(24px, 5vw, 48px);
-            padding-top: max(clamp(24px, 5vw, 48px), env(safe-area-inset-top));
-            padding-left: max(clamp(24px, 5vw, 48px), env(safe-area-inset-left));
-            max-width: min(560px, 90%);
             font-family: 'Noto Sans JP', 'Inter', sans-serif;
-            font-size: clamp(26px, 4.5vw, 40px);
+            font-size: clamp(52px, 9vw, 80px);
             font-weight: 300;
-            line-height: 1.35;
+            line-height: 1.25;
             letter-spacing: 0.02em;
             color: #fff;
-            text-align: left;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+            text-align: center;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+            max-width: min(900px, 92vw);
+            margin: 0;
+        }
+        .hero-overlay-center {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
             z-index: 2;
-            pointer-events: none;
+        }
+        .btn-book-demo {
+            display: inline-block;
+            margin-top: clamp(20px, 4vw, 32px);
+            padding: 16px 40px;
+            background: #fff;
+            color: #1e4620;
+            font-weight: 700;
+            font-size: clamp(15px, 2vw, 18px);
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-book-demo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+            color: #1e4620;
         }
         .hero-top-pic {
             display: block;
@@ -338,11 +359,13 @@
         <section class="hero" id="home">
             <div class="hero-banner">
                 <img src="imgs/genbasense_images/top_picture_genba.png" alt="GenbaSense – construction site safety" class="hero-top-pic">
-                <p class="hero-image-headline" data-i18n="info_headline">Visualize invisible risks.</p>
+                <div class="hero-overlay-center">
+                    <p class="hero-image-headline" data-i18n="info_headline">Visualize invisible risks.</p>
+                    <a href="#contact" class="btn-book-demo" data-i18n="btn_book_demo">Book a demo</a>
+                </div>
             </div>
             <div class="container hero-content">
-                <img src="imgs/logo_GenbaSense.png" alt="GenbaSense" class="hero-logo">
-                <h1 data-i18n="hero_title">AI-Driven Site Safety to Prevent Machinery Collisions</h1>
+                <h1 data-i18n="hero_title">Site Safety to Prevent Machinery Collisions</h1>
                 <p class="tagline" data-i18n="hero_tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
                 <div class="hero-stat">17K</div>
                 <p class="hero-stat-label" data-i18n="hero_stat_label">Non-fatal construction injury cases per year in Japan—vehicle and machinery accidents are the most common.</p>
