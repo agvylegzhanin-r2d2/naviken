@@ -25,7 +25,7 @@
         a { color: #2d5a27; }
         .back-link { display: inline-block; font-size: 14px; text-decoration: none; color: #555; }
         .back-link:hover { text-decoration: underline; color: #1a1a1a; }
-        section { padding: 64px 0; scroll-margin-top: 100px; }
+        section { padding: 64px 0; scroll-margin-top: 72px; }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
             color: #666; text-align: center; margin-bottom: 10px;
@@ -45,77 +45,62 @@
             z-index: 100;
             background: #fff;
             border-bottom: 1px solid #e8e8e8;
-            padding: clamp(16px, 3vw, 24px) clamp(20px, 4vw, 40px);
-            padding-top: max(clamp(16px, 3vw, 24px), env(safe-area-inset-top));
+            padding: 8px clamp(16px, 3vw, 28px);
+            padding-top: max(8px, env(safe-area-inset-top));
         }
         .info-bar-inner {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
-            gap: 24px;
+            gap: 16px;
             flex-wrap: wrap;
         }
         .info-bar-brand-row {
             display: flex;
-            align-items: flex-start;
-            gap: clamp(16px, 3vw, 28px);
+            align-items: center;
+            gap: clamp(10px, 2vw, 18px);
             flex: 1;
             min-width: 0;
         }
         .info-bar-logo {
-            height: clamp(168px, 27vw, 264px);
+            height: clamp(40px, 6vw, 56px);
             width: auto;
-            max-width: 360px;
+            max-width: 140px;
             object-fit: contain;
             flex-shrink: 0;
         }
         .info-bar-text {
             text-align: left;
             color: #1a1a1a;
-            max-width: min(520px, 100%);
+            max-width: min(420px, 100%);
             font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .info-bar-brand {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            font-size: clamp(17px, 2.2vw, 22px);
-            font-weight: 500;
+            font-size: clamp(15px, 2vw, 18px);
+            font-weight: 600;
             letter-spacing: 0.01em;
             margin-bottom: 2px;
-        }
-        .info-bar-tag {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(10px, 1.3vw, 12px);
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: clamp(10px, 2vw, 18px);
-        }
-        .info-bar-headline {
-            font-size: clamp(22px, 3.8vw, 32px);
-            font-weight: 300;
-            line-height: 1.4;
-            margin-bottom: 6px;
-            letter-spacing: 0.02em;
+            line-height: 1.2;
         }
         .info-bar-sub {
-            font-size: clamp(12px, 1.6vw, 15px);
-            font-weight: 300;
-            line-height: 1.55;
-            color: #444;
+            font-size: clamp(11px, 1.4vw, 13px);
+            font-weight: 400;
+            line-height: 1.4;
+            color: #555;
+            margin: 0;
         }
         .info-bar-nav {
             flex-shrink: 0;
             display: flex;
             align-items: center;
-            gap: clamp(12px, 2.5vw, 24px);
+            gap: clamp(10px, 2vw, 18px);
             flex-wrap: wrap;
-            padding-top: 4px;
         }
         .info-bar-nav a {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             color: #333;
             text-decoration: none;
@@ -123,11 +108,11 @@
         }
         .info-bar-nav a:hover { color: #2d5a27; text-decoration: underline; }
         .gs-lang-toggle {
-            padding: 8px 16px;
+            padding: 6px 12px;
             border: 1px solid #ddd;
             border-radius: 999px;
             background: #fff;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: #333;
             cursor: pointer;
@@ -137,11 +122,11 @@
         .gs-lang-toggle:hover { border-color: #2d5a27; color: #2d5a27; }
         .btn-contact-nav {
             display: inline-block;
-            padding: 10px 22px;
+            padding: 7px 16px;
             background: #2d5a27;
             color: #fff !important;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             border-radius: 999px;
             text-decoration: none !important;
             box-shadow: 0 4px 14px rgba(45,90,39,0.25);
@@ -191,6 +176,25 @@
             height: 100vh;
             min-height: 100vh;
             overflow: hidden;
+        }
+        .hero-image-headline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: clamp(24px, 5vw, 48px);
+            padding-top: max(clamp(24px, 5vw, 48px), env(safe-area-inset-top));
+            padding-left: max(clamp(24px, 5vw, 48px), env(safe-area-inset-left));
+            max-width: min(560px, 90%);
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            font-size: clamp(26px, 4.5vw, 40px);
+            font-weight: 300;
+            line-height: 1.35;
+            letter-spacing: 0.02em;
+            color: #fff;
+            text-align: left;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+            z-index: 2;
+            pointer-events: none;
         }
         .hero-top-pic {
             display: block;
@@ -313,8 +317,6 @@
                     <img src="imgs/genbasense_images/logo_genbasense_2.0.png" alt="GenbaSense" class="info-bar-logo">
                     <div class="info-bar-text">
                         <p class="info-bar-brand">GenbaSense</p>
-                        <p class="info-bar-tag" data-i18n="info_tag">UWB Safety Solution</p>
-                        <p class="info-bar-headline" data-i18n="info_headline">Visualize invisible risks.</p>
                         <p class="info-bar-sub" data-i18n="info_sub">Next-generation site safety powered by UWB.</p>
                     </div>
                 </div>
@@ -336,6 +338,7 @@
         <section class="hero" id="home">
             <div class="hero-banner">
                 <img src="imgs/genbasense_images/top_picture_genba.png" alt="GenbaSense – construction site safety" class="hero-top-pic">
+                <p class="hero-image-headline" data-i18n="info_headline">Visualize invisible risks.</p>
             </div>
             <div class="container hero-content">
                 <img src="imgs/logo_GenbaSense.png" alt="GenbaSense" class="hero-logo">
