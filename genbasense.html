@@ -25,7 +25,7 @@
         a { color: #2d5a27; }
         .back-link { display: inline-block; font-size: 14px; text-decoration: none; color: #555; }
         .back-link:hover { text-decoration: underline; color: #1a1a1a; }
-        section { padding: 64px 0; }
+        section { padding: 64px 0; scroll-margin-top: 100px; }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
             color: #666; text-align: center; margin-bottom: 10px;
@@ -56,6 +56,20 @@
             justify-content: space-between;
             gap: 24px;
             flex-wrap: wrap;
+        }
+        .info-bar-brand-row {
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(16px, 3vw, 28px);
+            flex: 1;
+            min-width: 0;
+        }
+        .info-bar-logo {
+            height: clamp(56px, 9vw, 88px);
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
         }
         .info-bar-text {
             text-align: left;
@@ -92,7 +106,23 @@
             line-height: 1.55;
             color: #444;
         }
-        .info-bar-nav { flex-shrink: 0; padding-top: 4px; }
+        .info-bar-nav {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2.5vw, 24px);
+            flex-wrap: wrap;
+            padding-top: 4px;
+        }
+        .info-bar-nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .info-bar-nav a:hover { color: #2d5a27; text-decoration: underline; }
+        html { scroll-behavior: smooth; }
         /* Hero */
         .hero { padding: 0 0 56px; text-align: center; }
         .hero-banner {
@@ -220,20 +250,27 @@
     <div class="page-content">
         <header class="info-bar">
             <div class="info-bar-inner">
-                <div class="info-bar-text">
-                    <p class="info-bar-brand">GenbaSense</p>
-                    <p class="info-bar-tag">UWB Safety Solution</p>
-                    <p class="info-bar-headline">見えないリスクを、可視化する。</p>
-                    <p class="info-bar-sub">UWBが実現する、次世代の現場安全。</p>
+                <div class="info-bar-brand-row">
+                    <img src="imgs/logo_GenbaSense.png" alt="GenbaSense" class="info-bar-logo">
+                    <div class="info-bar-text">
+                        <p class="info-bar-brand">GenbaSense</p>
+                        <p class="info-bar-tag">UWB Safety Solution</p>
+                        <p class="info-bar-headline">見えないリスクを、可視化する。</p>
+                        <p class="info-bar-sub">UWBが実現する、次世代の現場安全。</p>
+                    </div>
                 </div>
-                <nav class="info-bar-nav">
-                    <a href="index.html" class="back-link">&larr; Back to product choice</a>
+                <nav class="info-bar-nav" aria-label="Main navigation">
+                    <a href="#home">Home</a>
+                    <a href="#solutions">Solutions</a>
+                    <a href="#team">Team</a>
+                    <a href="#product">Product</a>
+                    <a href="#contact">Contact</a>
                 </nav>
             </div>
         </header>
 
         <!-- Hero -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-banner">
                 <img src="imgs/genbasense_images/top_picture_genba.png" alt="GenbaSense – construction site safety" class="hero-top-pic">
             </div>
@@ -322,7 +359,7 @@
         </section>
 
         <!-- How it works (3 steps) + solution image -->
-        <section class="section-alt">
+        <section class="section-alt" id="solutions">
             <div class="container">
                 <p class="section-eyebrow">Our approach</p>
                 <h2 class="section-title">How Our Technology Works</h2>
@@ -403,7 +440,7 @@
         </section>
 
         <!-- Hardware -->
-        <section>
+        <section id="product">
             <div class="container">
                 <h2 class="section-title">Hardware and Software</h2>
                 <ul style="max-width: 480px; margin: 0 auto; list-style: none;">
@@ -413,6 +450,18 @@
                     <li style="padding: 6px 0;">• Patent application filed</li>
                     <li style="padding: 6px 0;">• Beta MVP planned for March</li>
                 </ul>
+            </div>
+        </section>
+
+        <section class="section-alt" id="team">
+            <div class="container">
+                <h2 class="section-title">Team</h2>
+                <p class="section-lead">GenbaSense is developed at OIST Innovation with a multidisciplinary founding team.</p>
+                <div class="contact" style="text-align: center; margin-top: 16px;">
+                    <p><a href="mailto:a.vylegzhanin@oist.jp">a.vylegzhanin@oist.jp</a></p>
+                    <p><a href="mailto:s.zobnin@oist.jp">s.zobnin@oist.jp</a></p>
+                    <p><a href="mailto:tds@oist.jp">tds@oist.jp</a></p>
+                </div>
             </div>
         </section>
 
