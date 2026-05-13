@@ -3,147 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#2d5a27">
+    <meta name="theme-color" content="#ffffff">
     <title>GenbaSense – Digital safety sense for all workers on site</title>
     <link rel="icon" type="image/png" sizes="32x32" href="imgs/logo_nabi_ken.png?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #1e4620 0%, #2d5a27 50%, #1a3d1c 100%);
-            color: #fff;
+            background: #fff;
+            color: #1a1a1a;
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
         }
-        .parallax-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0; will-change: transform; color: #fff;
-        }
-        .parallax-bg svg { position: absolute; opacity: 0.08; }
-        .parallax-bg .crane { left: 8%; bottom: 15%; width: 120px; height: 180px; }
-        .parallax-bg .scaffold { left: 55%; top: 25%; width: 200px; height: 4px; }
-        .parallax-bg .scaffold2 { right: 12%; top: 45%; width: 140px; height: 4px; }
-        .parallax-bg .cone { right: 25%; bottom: 20%; width: 24px; height: 32px; }
-        .parallax-bg .barrier { left: 75%; bottom: 30%; width: 80px; height: 40px; }
-        .parallax-bg .grid-lines { left: 0; bottom: 0; width: 100%; height: 40%; opacity: 0.05; }
-        @media (prefers-reduced-motion: reduce) { .parallax-bg { transform: none !important; } }
-        .page-content { position: relative; z-index: 1; }
+        .parallax-bg { display: none; }
+        .page-content { position: relative; z-index: 1; background: #fff; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-        a { color: rgba(255,255,255,0.95); }
-        .back-link { display: inline-block; margin: 20px 0; font-size: 14px; text-decoration: none; opacity: 0.9; }
-        .back-link:hover { text-decoration: underline; }
+        a { color: #2d5a27; }
+        .back-link { display: inline-block; font-size: 14px; text-decoration: none; color: #555; }
+        .back-link:hover { text-decoration: underline; color: #1a1a1a; }
         section { padding: 64px 0; }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-            opacity: 0.75; text-align: center; margin-bottom: 10px;
+            color: #666; text-align: center; margin-bottom: 10px;
         }
         .section-title {
             font-size: clamp(28px, 4vw, 38px); font-weight: 700; margin-bottom: 16px;
-            text-align: center; text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            text-align: center; color: #1a1a1a;
         }
         .section-lead {
             text-align: center; max-width: 680px; margin: 0 auto 32px;
-            font-size: clamp(16px, 2vw, 18px); opacity: 0.92;
+            font-size: clamp(16px, 2vw, 18px); color: #444;
         }
+        /* Top info bar */
+        .info-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            padding: clamp(16px, 3vw, 24px) clamp(20px, 4vw, 40px);
+            padding-top: max(clamp(16px, 3vw, 24px), env(safe-area-inset-top));
+        }
+        .info-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .info-bar-text {
+            text-align: left;
+            color: #1a1a1a;
+            max-width: min(520px, 100%);
+            font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .info-bar-brand {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            font-size: clamp(17px, 2.2vw, 22px);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            margin-bottom: 2px;
+        }
+        .info-bar-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(10px, 1.3vw, 12px);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: clamp(10px, 2vw, 18px);
+        }
+        .info-bar-headline {
+            font-size: clamp(22px, 3.8vw, 32px);
+            font-weight: 300;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            letter-spacing: 0.02em;
+        }
+        .info-bar-sub {
+            font-size: clamp(12px, 1.6vw, 15px);
+            font-weight: 300;
+            line-height: 1.55;
+            color: #444;
+        }
+        .info-bar-nav { flex-shrink: 0; padding-top: 4px; }
         /* Hero */
-        .hero { padding: 24px 0 56px; text-align: center; }
+        .hero { padding: 0 0 56px; text-align: center; }
+        .hero-banner {
+            position: relative;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            height: 100vh;
+            min-height: 100vh;
+            overflow: hidden;
+        }
         .hero-top-pic {
             display: block;
             width: 100%;
-            max-width: 100%;
-            height: auto;
-            max-height: 420px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 16px;
-            margin: 0 auto 32px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            object-position: center;
+            margin: 0;
         }
         .hero-logo { display: block; margin: 0 auto 20px; height: 80px; width: auto; max-width: 200px; object-fit: contain; }
-        .hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.15; }
-        .hero .tagline { font-size: clamp(17px, 2.5vw, 21px); opacity: 0.95; max-width: 620px; margin: 0 auto 28px; }
+        .hero-content { padding-top: 48px; }
+        .hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.15; color: #1a1a1a; }
+        .hero .tagline { font-size: clamp(17px, 2.5vw, 21px); color: #444; max-width: 620px; margin: 0 auto 28px; }
         .hero-stat {
             display: inline-block; font-size: clamp(42px, 8vw, 64px); font-weight: 700;
-            line-height: 1; margin: 8px 0 12px;
+            line-height: 1; margin: 8px 0 12px; color: #2d5a27;
         }
-        .hero-stat-label { font-size: 15px; opacity: 0.85; max-width: 320px; margin: 0 auto 28px; }
+        .hero-stat-label { font-size: 15px; color: #666; max-width: 320px; margin: 0 auto 28px; }
         .btn-primary {
-            display: inline-block; padding: 14px 32px; background: #fff; color: #1e4620;
+            display: inline-block; padding: 14px 32px; background: #2d5a27; color: #fff;
             font-weight: 700; font-size: 15px; border-radius: 999px; text-decoration: none;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.2); transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(45,90,39,0.25); transition: transform 0.2s, box-shadow 0.2s;
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,0.28); color: #1e4620; }
-        /* 3 feature pillars (Logistical-style) */
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,39,0.35); color: #fff; }
+        /* 3 feature pillars */
         .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 8px; }
         .pillar {
-            background: rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px;
-            border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+            background: #f7f7f7; border-radius: 16px; padding: 28px 24px;
+            border: 1px solid #e8e8e8;
         }
-        .pillar h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .pillar p { font-size: 15px; opacity: 0.92; }
+        .pillar h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
+        .pillar p { font-size: 15px; color: #444; }
         /* Cards */
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 28px; }
         .card {
-            background: rgba(255,255,255,0.12); border-radius: 16px; padding: 24px;
-            border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+            background: #f7f7f7; border-radius: 16px; padding: 24px;
+            border: 1px solid #e8e8e8;
         }
-        .card h3 { font-size: 17px; margin-bottom: 8px; font-weight: 700; }
-        .card p, .card li { font-size: 14px; opacity: 0.92; }
+        .card h3 { font-size: 17px; margin-bottom: 8px; font-weight: 700; color: #1a1a1a; }
+        .card p, .card li { font-size: 14px; color: #444; }
         .card ul { list-style: none; }
         .card li { padding: 4px 0; padding-left: 1.2em; position: relative; }
-        .card li::before { content: "•"; position: absolute; left: 0; }
+        .card li::before { content: "•"; position: absolute; left: 0; color: #2d5a27; }
         /* Challenge list */
         .challenge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; }
         .challenge-item {
             padding: 20px 22px; border-radius: 14px;
-            background: rgba(0,0,0,0.12); border: 1px solid rgba(255,255,255,0.12);
+            background: #f7f7f7; border: 1px solid #e8e8e8;
         }
-        .challenge-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .challenge-item p { font-size: 14px; opacity: 0.88; }
-        /* How it works – 3 steps */
+        .challenge-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #1a1a1a; }
+        .challenge-item p { font-size: 14px; color: #555; }
+        /* How it works */
         .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 28px; }
         .step { text-align: center; padding: 24px 16px; }
         .step-num {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.2);
+            width: 40px; height: 40px; border-radius: 50%; background: #2d5a27; color: #fff;
             font-weight: 700; font-size: 18px; margin-bottom: 14px;
         }
-        .step h3 { font-size: 17px; margin-bottom: 8px; }
-        .step p { font-size: 14px; opacity: 0.9; }
+        .step h3 { font-size: 17px; margin-bottom: 8px; color: #1a1a1a; }
+        .step p { font-size: 14px; color: #555; }
         /* Stats */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 28px; }
         .stat-card {
             text-align: center; padding: 28px 16px; border-radius: 16px;
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+            background: #f7f7f7; border: 1px solid #e8e8e8;
         }
-        .stat-value { font-size: clamp(32px, 5vw, 44px); font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
-        .stat-label { font-size: 13px; opacity: 0.85; line-height: 1.4; }
+        .stat-value { font-size: clamp(32px, 5vw, 44px); font-weight: 700; line-height: 1.1; margin-bottom: 8px; color: #2d5a27; }
+        .stat-label { font-size: 13px; color: #666; line-height: 1.4; }
         .highlight-box {
-            background: rgba(255,255,255,0.15); border-radius: 16px; padding: 28px;
-            margin: 28px 0 0; text-align: center; border: 1px solid rgba(255,255,255,0.2);
+            background: #f0f4f0; border-radius: 16px; padding: 28px;
+            margin: 28px 0 0; text-align: center; border: 1px solid #d4e4d4;
         }
-        .highlight-box p { font-size: 17px; margin: 0; }
+        .highlight-box p { font-size: 17px; margin: 0; color: #1a1a1a; }
         /* Images */
-        .section-fig { max-width: 100%; width: 100%; border-radius: 12px; display: block; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .section-fig { max-width: 100%; width: 100%; border-radius: 12px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
         .section-fig-wrap { margin: 24px 0; text-align: center; }
         .section-fig-wrap.framed {
             max-width: 66.67%; margin-left: auto; margin-right: auto; padding: 14px;
-            border: 2px solid rgba(255,255,255,0.4); border-radius: 14px;
-            background: rgba(0,0,0,0.15); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+            border: 2px solid #e0e0e0; border-radius: 14px; background: #fafafa;
         }
         .section-fig-wrap.framed .section-fig { margin: 0; border-radius: 8px; }
         .benefit-images {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px; margin-top: 28px;
         }
-        .benefit-images img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .benefit-images img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
         .cta-section { text-align: center; padding: 56px 0 64px; }
         .cta-section .contact { margin-top: 20px; font-size: 16px; }
         .cta-section a[href^="mailto"] { text-decoration: underline; }
-        .section-alt { background: rgba(0,0,0,0.08); }
+        .section-alt { background: #f9f9f9; }
     </style>
 </head>
 <body>
@@ -169,14 +218,26 @@
     </div>
 
     <div class="page-content">
-        <div class="container">
-            <a href="index.html" class="back-link">&larr; Back to product choice</a>
-        </div>
+        <header class="info-bar">
+            <div class="info-bar-inner">
+                <div class="info-bar-text">
+                    <p class="info-bar-brand">GenbaSense</p>
+                    <p class="info-bar-tag">UWB Safety Solution</p>
+                    <p class="info-bar-headline">見えないリスクを、可視化する。</p>
+                    <p class="info-bar-sub">UWBが実現する、次世代の現場安全。</p>
+                </div>
+                <nav class="info-bar-nav">
+                    <a href="index.html" class="back-link">&larr; Back to product choice</a>
+                </nav>
+            </div>
+        </header>
 
-        <!-- Hero (Logistical-style: headline + sub + stat + CTA) -->
+        <!-- Hero -->
         <section class="hero">
-            <div class="container">
+            <div class="hero-banner">
                 <img src="imgs/genbasense_images/top_picture_genba.png" alt="GenbaSense – construction site safety" class="hero-top-pic">
+            </div>
+            <div class="container hero-content">
                 <img src="imgs/logo_GenbaSense.png" alt="GenbaSense" class="hero-logo">
                 <h1>AI-Driven Site Safety to Prevent Machinery Collisions</h1>
                 <p class="tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
