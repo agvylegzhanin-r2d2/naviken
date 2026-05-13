@@ -122,6 +122,19 @@
             white-space: nowrap;
         }
         .info-bar-nav a:hover { color: #2d5a27; text-decoration: underline; }
+        .gs-lang-toggle {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            background: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .gs-lang-toggle:hover { border-color: #2d5a27; color: #2d5a27; }
         html { scroll-behavior: smooth; }
         /* Hero */
         .hero { padding: 0 0 56px; text-align: center; }
@@ -254,17 +267,21 @@
                     <img src="imgs/genbasense_images/logo_genbasense_2.0.png" alt="GenbaSense" class="info-bar-logo">
                     <div class="info-bar-text">
                         <p class="info-bar-brand">GenbaSense</p>
-                        <p class="info-bar-tag">UWB Safety Solution</p>
-                        <p class="info-bar-headline">見えないリスクを、可視化する。</p>
-                        <p class="info-bar-sub">UWBが実現する、次世代の現場安全。</p>
+                        <p class="info-bar-tag" data-i18n="info_tag">UWB Safety Solution</p>
+                        <p class="info-bar-headline" data-i18n="info_headline">Visualize invisible risks.</p>
+                        <p class="info-bar-sub" data-i18n="info_sub">Next-generation site safety powered by UWB.</p>
                     </div>
                 </div>
                 <nav class="info-bar-nav" aria-label="Main navigation">
-                    <a href="#home">Home</a>
-                    <a href="#solutions">Solutions</a>
-                    <a href="#team">Team</a>
-                    <a href="#product">Product</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#home" data-i18n="nav_home">Home</a>
+                    <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+                    <a href="#team" data-i18n="nav_team">Team</a>
+                    <a href="#product" data-i18n="nav_product">Product</a>
+                    <a href="#contact" data-i18n="nav_contact">Contact</a>
+                    <button type="button" id="gs-lang-toggle" class="gs-lang-toggle" aria-label="Switch language">
+                        <span class="gs-lang-en">🇯🇵 日本語</span>
+                        <span class="gs-lang-ja" style="display:none;">🇺🇸 English</span>
+                    </button>
                 </nav>
             </div>
         </header>
@@ -276,11 +293,11 @@
             </div>
             <div class="container hero-content">
                 <img src="imgs/logo_GenbaSense.png" alt="GenbaSense" class="hero-logo">
-                <h1>AI-Driven Site Safety to Prevent Machinery Collisions</h1>
-                <p class="tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
+                <h1 data-i18n="hero_title">AI-Driven Site Safety to Prevent Machinery Collisions</h1>
+                <p class="tagline" data-i18n="hero_tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
                 <div class="hero-stat">17K</div>
-                <p class="hero-stat-label">Non-fatal construction injury cases per year in Japan—vehicle and machinery accidents are the most common.</p>
-                <a href="#contact" class="btn-primary">Get in touch</a>
+                <p class="hero-stat-label" data-i18n="hero_stat_label">Non-fatal construction injury cases per year in Japan—vehicle and machinery accidents are the most common.</p>
+                <a href="#contact" class="btn-primary" data-i18n="btn_contact">Get in touch</a>
             </div>
         </section>
 
@@ -289,16 +306,16 @@
             <div class="container">
                 <div class="pillars">
                     <div class="pillar">
-                        <h3>Real-Time Proximity Visibility</h3>
-                        <p>See where workers and moving machinery are in real time with UWB anchors (1&nbsp;cm–50&nbsp;m), so safety decisions are based on data—not guesswork.</p>
+                        <h3 data-i18n="pillar1_title">Real-Time Proximity Visibility</h3>
+                        <p data-i18n="pillar1_text">See where workers and moving machinery are in real time with UWB anchors (1&nbsp;cm–50&nbsp;m), so safety decisions are based on data—not guesswork.</p>
                     </div>
                     <div class="pillar">
-                        <h3>AI-Driven Collision Prevention</h3>
-                        <p>AI tracks positions and triggers instant haptic feedback when a worker enters a danger zone—reducing collision risk without relying on sight or sound.</p>
+                        <h3 data-i18n="pillar2_title">AI-Driven Collision Prevention</h3>
+                        <p data-i18n="pillar2_text">AI tracks positions and triggers instant haptic feedback when a worker enters a danger zone—reducing collision risk without relying on sight or sound.</p>
                     </div>
                     <div class="pillar">
-                        <h3>Works Without Network</h3>
-                        <p>Operates offline on site. Haptic alerts work in noisy environments and low-visibility conditions where alarms and radios fail.</p>
+                        <h3 data-i18n="pillar3_title">Works Without Network</h3>
+                        <p data-i18n="pillar3_text">Operates offline on site. Haptic alerts work in noisy environments and low-visibility conditions where alarms and radios fail.</p>
                     </div>
                 </div>
             </div>
@@ -307,14 +324,14 @@
         <!-- Who we serve -->
         <section class="section-alt">
             <div class="container">
-                <p class="section-eyebrow">Target customers</p>
-                <h2 class="section-title">Who We Serve</h2>
-                <p class="section-lead">GenbaSense helps construction companies reduce accidents, insurance costs, and downtime with wearable safety technology built for real site conditions.</p>
+                <p class="section-eyebrow" data-i18n="serve_eyebrow">Target customers</p>
+                <h2 class="section-title" data-i18n="serve_title">Who We Serve</h2>
+                <p class="section-lead" data-i18n="serve_lead">GenbaSense helps construction companies reduce accidents, insurance costs, and downtime with wearable safety technology built for real site conditions.</p>
                 <div class="card-grid">
-                    <div class="card"><h3>General contractors</h3><p>Lower accident rates and work stoppages with site-wide proximity awareness across crews and equipment.</p></div>
-                    <div class="card"><h3>Subcontractors</h3><p>Protect workers in high-risk zones with haptic alerts that work when visibility and communication are limited.</p></div>
-                    <div class="card"><h3>Site managers &amp; safety officers</h3><p>Collect hot-zone analytics and evidence for ISO&nbsp;45001 compliance and proactive risk management.</p></div>
-                    <div class="card"><h3>Equipment operators</h3><p>Reduce blind-spot collisions with workers who receive instant tactile warnings before impact.</p></div>
+                    <div class="card"><h3 data-i18n="serve1_title">General contractors</h3><p data-i18n="serve1_text">Lower accident rates and work stoppages with site-wide proximity awareness across crews and equipment.</p></div>
+                    <div class="card"><h3 data-i18n="serve2_title">Subcontractors</h3><p data-i18n="serve2_text">Protect workers in high-risk zones with haptic alerts that work when visibility and communication are limited.</p></div>
+                    <div class="card"><h3 data-i18n="serve3_title">Site managers &amp; safety officers</h3><p data-i18n="serve3_text">Collect hot-zone analytics and evidence for ISO&nbsp;45001 compliance and proactive risk management.</p></div>
+                    <div class="card"><h3 data-i18n="serve4_title">Equipment operators</h3><p data-i18n="serve4_text">Reduce blind-spot collisions with workers who receive instant tactile warnings before impact.</p></div>
                 </div>
             </div>
         </section>
@@ -322,66 +339,66 @@
         <!-- Real-world challenges + problem image -->
         <section>
             <div class="container">
-                <p class="section-eyebrow">Site safety challenges</p>
-                <h2 class="section-title">Real-World Challenges</h2>
-                <p class="section-lead">GenbaSense addresses the structural risks that make construction sites dangerous and expensive—by making proximity measurable, alerting instantly, and turning movement into actionable data.</p>
+                <p class="section-eyebrow" data-i18n="challenge_eyebrow">Site safety challenges</p>
+                <h2 class="section-title" data-i18n="challenge_title">Real-World Challenges</h2>
+                <p class="section-lead" data-i18n="challenge_lead">GenbaSense addresses the structural risks that make construction sites dangerous and expensive—by making proximity measurable, alerting instantly, and turning movement into actionable data.</p>
                 <div class="section-fig-wrap framed">
                     <img src="imgs/genbasense_images/problem.png" alt="Construction site problem – vehicle and machinery accidents" class="section-fig">
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-item">
-                        <h4>Machinery collisions are invisible until too late</h4>
-                        <p>Workers in blind spots around forklifts, cranes, and bulldozers often cannot see or hear approaching equipment in time.</p>
+                        <h4 data-i18n="ch1_title">Machinery collisions are invisible until too late</h4>
+                        <p data-i18n="ch1_text">Workers in blind spots around forklifts, cranes, and bulldozers often cannot see or hear approaching equipment in time.</p>
                     </div>
                     <div class="challenge-item">
-                        <h4>Noise blocks auditory warnings</h4>
-                        <p>Alarms and radios fail on loud sites. Safety signals must reach workers through another channel—haptic feedback.</p>
+                        <h4 data-i18n="ch2_title">Noise blocks auditory warnings</h4>
+                        <p data-i18n="ch2_text">Alarms and radios fail on loud sites. Safety signals must reach workers through another channel—haptic feedback.</p>
                     </div>
                     <div class="challenge-item">
-                        <h4>Low visibility conditions</h4>
-                        <p>Dust, weather, and night work reduce visual awareness. Traditional PPE does not close the awareness gap.</p>
+                        <h4 data-i18n="ch3_title">Low visibility conditions</h4>
+                        <p data-i18n="ch3_text">Dust, weather, and night work reduce visual awareness. Traditional PPE does not close the awareness gap.</p>
                     </div>
                     <div class="challenge-item">
-                        <h4>Accidents carry heavy financial cost</h4>
-                        <p>Lost workdays, rising insurance premiums, compensation (¥1M–¥10M), and work stoppages drain project budgets.</p>
+                        <h4 data-i18n="ch4_title">Accidents carry heavy financial cost</h4>
+                        <p data-i18n="ch4_text">Lost workdays, rising insurance premiums, compensation (¥1M–¥10M), and work stoppages drain project budgets.</p>
                     </div>
                     <div class="challenge-item">
-                        <h4>Safety data is not collected systematically</h4>
-                        <p>Hot zones and worker movement patterns are rarely measured, making proactive risk management difficult.</p>
+                        <h4 data-i18n="ch5_title">Safety data is not collected systematically</h4>
+                        <p data-i18n="ch5_text">Hot zones and worker movement patterns are rarely measured, making proactive risk management difficult.</p>
                     </div>
                     <div class="challenge-item">
-                        <h4>Compliance pressure is increasing</h4>
-                        <p>ISO&nbsp;45001 and internal safety reviews demand evidence of proactive hazard control—not reactive reporting.</p>
+                        <h4 data-i18n="ch6_title">Compliance pressure is increasing</h4>
+                        <p data-i18n="ch6_text">ISO&nbsp;45001 and internal safety reviews demand evidence of proactive hazard control—not reactive reporting.</p>
                     </div>
                 </div>
-                <div class="highlight-box"><p><strong>Accidents are a financial risk—not just a safety issue.</strong></p></div>
+                <div class="highlight-box"><p><strong data-i18n="challenge_highlight">Accidents are a financial risk—not just a safety issue.</strong></p></div>
             </div>
         </section>
 
         <!-- How it works (3 steps) + solution image -->
         <section class="section-alt" id="solutions">
             <div class="container">
-                <p class="section-eyebrow">Our approach</p>
-                <h2 class="section-title">How Our Technology Works</h2>
-                <p class="section-lead">GenbaSense turns site movement into real-time safety—by detecting proximity, alerting with haptics, and analyzing patterns for continuous improvement.</p>
+                <p class="section-eyebrow" data-i18n="sol_eyebrow">Our approach</p>
+                <h2 class="section-title" data-i18n="sol_title">How Our Technology Works</h2>
+                <p class="section-lead" data-i18n="sol_lead">GenbaSense turns site movement into real-time safety—by detecting proximity, alerting with haptics, and analyzing patterns for continuous improvement.</p>
                 <div class="section-fig-wrap framed">
                     <img src="imgs/genbasense_images/solution.png" alt="GenbaSense solution – UWB and haptic safety" class="section-fig">
                 </div>
                 <div class="steps">
                     <div class="step">
                         <div class="step-num">1</div>
-                        <h3>Detect proximity with UWB</h3>
-                        <p>AI-powered UWB anchors track worker and equipment positions in real time—without network connectivity.</p>
+                        <h3 data-i18n="step1_title">Detect proximity with UWB</h3>
+                        <p data-i18n="step1_text">AI-powered UWB anchors track worker and equipment positions in real time—without network connectivity.</p>
                     </div>
                     <div class="step">
                         <div class="step-num">2</div>
-                        <h3>Alert instantly with haptics</h3>
-                        <p>Identifiable haptic patterns warn workers the moment they enter a danger zone—works in noise and low visibility.</p>
+                        <h3 data-i18n="step2_title">Alert instantly with haptics</h3>
+                        <p data-i18n="step2_text">Identifiable haptic patterns warn workers the moment they enter a danger zone—works in noise and low visibility.</p>
                     </div>
                     <div class="step">
                         <div class="step-num">3</div>
-                        <h3>Analyze hot zones</h3>
-                        <p>Movement and zone data feed analytics for safety meetings, compliance evidence, and site layout optimization.</p>
+                        <h3 data-i18n="step3_title">Analyze hot zones</h3>
+                        <p data-i18n="step3_text">Movement and zone data feed analytics for safety meetings, compliance evidence, and site layout optimization.</p>
                     </div>
                 </div>
             </div>
@@ -390,25 +407,25 @@
         <!-- Stats (Logistical "by the numbers") -->
         <section>
             <div class="container">
-                <p class="section-eyebrow">Why GenbaSense</p>
-                <h2 class="section-title">Construction Safety by the Numbers</h2>
-                <p class="section-lead">Structural risks on site are measurable—and they compound without new approaches to worker awareness.</p>
+                <p class="section-eyebrow" data-i18n="stats_eyebrow">Why GenbaSense</p>
+                <h2 class="section-title" data-i18n="stats_title">Construction Safety by the Numbers</h2>
+                <p class="section-lead" data-i18n="stats_lead">Structural risks on site are measurable—and they compound without new approaches to worker awareness.</p>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-value">17K</div>
-                        <p class="stat-label">Non-fatal injury cases per year in Japan</p>
+                        <p class="stat-label" data-i18n="stat1_label">Non-fatal injury cases per year in Japan</p>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value">80%</div>
-                        <p class="stat-label">Of daily wages paid for lost workdays after accidents</p>
+                        <p class="stat-label" data-i18n="stat2_label">Of daily wages paid for lost workdays after accidents</p>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value">¥10M</div>
-                        <p class="stat-label">Compensation range for serious injuries</p>
+                        <p class="stat-label" data-i18n="stat3_label">Compensation range for serious injuries</p>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value">1–50m</div>
-                        <p class="stat-label">UWB positioning range—from centimeters to site scale</p>
+                        <p class="stat-label" data-i18n="stat4_label">UWB positioning range—from centimeters to site scale</p>
                     </div>
                 </div>
             </div>
@@ -417,9 +434,9 @@
         <!-- Use cases (benefit images) -->
         <section class="section-alt">
             <div class="container">
-                <p class="section-eyebrow">Customer cases</p>
-                <h2 class="section-title">Use Cases</h2>
-                <p class="section-lead">Real-world construction scenarios where proximity visibility and haptic alerts make an impact.</p>
+                <p class="section-eyebrow" data-i18n="cases_eyebrow">Customer cases</p>
+                <h2 class="section-title" data-i18n="cases_title">Use Cases</h2>
+                <p class="section-lead" data-i18n="cases_lead">Real-world construction scenarios where proximity visibility and haptic alerts make an impact.</p>
                 <div class="benefit-images">
                     <img src="imgs/genbasense_images/forklift case.png" alt="Forklift case – GenbaSense safety">
                     <img src="imgs/genbasense_images/crane case.png" alt="Crane case – GenbaSense safety">
@@ -428,12 +445,12 @@
                 </div>
                 <div class="card-grid">
                     <div class="card">
-                        <h3>Cost reduction</h3>
-                        <p>Save on insurance and compensation through fewer accidents. Prevent delays and work stoppages on site.</p>
+                        <h3 data-i18n="case1_title">Cost reduction</h3>
+                        <p data-i18n="case1_text">Save on insurance and compensation through fewer accidents. Prevent delays and work stoppages on site.</p>
                     </div>
                     <div class="card">
-                        <h3>Data &amp; compliance</h3>
-                        <p>Hot-zone data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
+                        <h3 data-i18n="case2_title">Data &amp; compliance</h3>
+                        <p data-i18n="case2_text">Hot-zone data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
                     </div>
                 </div>
             </div>
@@ -442,21 +459,21 @@
         <!-- Hardware -->
         <section id="product">
             <div class="container">
-                <h2 class="section-title">Hardware and Software</h2>
+                <h2 class="section-title" data-i18n="product_title">Hardware and Software</h2>
                 <ul style="max-width: 480px; margin: 0 auto; list-style: none;">
-                    <li style="padding: 6px 0;">• Precise positioning</li>
-                    <li style="padding: 6px 0;">• Identifiable haptic stimuli and multiple haptic patterns</li>
-                    <li style="padding: 6px 0;">• Human subject research completed</li>
-                    <li style="padding: 6px 0;">• Patent application filed</li>
-                    <li style="padding: 6px 0;">• Beta MVP planned for March</li>
+                    <li style="padding: 6px 0;" data-i18n="hw1">• Precise positioning</li>
+                    <li style="padding: 6px 0;" data-i18n="hw2">• Identifiable haptic stimuli and multiple haptic patterns</li>
+                    <li style="padding: 6px 0;" data-i18n="hw3">• Human subject research completed</li>
+                    <li style="padding: 6px 0;" data-i18n="hw4">• Patent application filed</li>
+                    <li style="padding: 6px 0;" data-i18n="hw5">• Beta MVP planned for March</li>
                 </ul>
             </div>
         </section>
 
         <section class="section-alt" id="team">
             <div class="container">
-                <h2 class="section-title">Team</h2>
-                <p class="section-lead">GenbaSense is developed at OIST Innovation with a multidisciplinary founding team.</p>
+                <h2 class="section-title" data-i18n="team_title">Team</h2>
+                <p class="section-lead" data-i18n="team_lead">GenbaSense is developed at OIST Innovation with a multidisciplinary founding team.</p>
                 <div class="contact" style="text-align: center; margin-top: 16px;">
                     <p><a href="mailto:a.vylegzhanin@oist.jp">a.vylegzhanin@oist.jp</a></p>
                     <p><a href="mailto:s.zobnin@oist.jp">s.zobnin@oist.jp</a></p>
@@ -468,27 +485,28 @@
         <!-- Funding -->
         <section class="section-alt">
             <div class="container">
-                <h2 class="section-title">Funding</h2>
-                <p class="section-lead" style="margin-bottom: 0;">Past funding: $150K grant from OIST Innovation.<br>Raising a $400K pre-seed round via J-KISS (Japan SAFE) at a $2.5M post-money valuation. Allocation: product development, operations, and marketing.</p>
+                <h2 class="section-title" data-i18n="funding_title">Funding</h2>
+                <p class="section-lead" style="margin-bottom: 0;" data-i18n="funding_lead" data-i18n-html="true">Past funding: $150K grant from OIST Innovation.<br>Raising a $400K pre-seed round via J-KISS (Japan SAFE) at a $2.5M post-money valuation. Allocation: product development, operations, and marketing.</p>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="cta-section" id="contact">
             <div class="container">
-                <p class="section-eyebrow">Get in touch</p>
-                <h2 class="section-title">Contact Us Today</h2>
-                <p class="section-lead">Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.</p>
+                <p class="section-eyebrow" data-i18n="contact_eyebrow">Get in touch</p>
+                <h2 class="section-title" data-i18n="contact_title">Contact Us Today</h2>
+                <p class="section-lead" data-i18n="contact_lead">Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.</p>
                 <div class="contact">
                     <p><a href="mailto:a.vylegzhanin@oist.jp">a.vylegzhanin@oist.jp</a></p>
                     <p><a href="mailto:s.zobnin@oist.jp">s.zobnin@oist.jp</a></p>
                     <p><a href="mailto:tds@oist.jp">tds@oist.jp</a></p>
                 </div>
-                <p style="margin-top: 32px;"><a href="index.html" class="back-link">&larr; Back to product choice</a></p>
+                <p style="margin-top: 32px;"><a href="index.html" class="back-link" data-i18n="back_link">&larr; Back to product choice</a></p>
             </div>
         </section>
     </div>
 
+    <script src="genbasense-i18n.js"></script>
     <script>
         (function () {
             var bg = document.getElementById('parallax-bg');
