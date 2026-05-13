@@ -135,13 +135,18 @@
                     <input type="tel" id="gs_phone" name="phone">
                 </div>
                 <div class="form-group">
-                    <label for="gs_country"><span data-i18n="form_country">Country</span> <span class="required">*</span></label>
-                    <select id="gs_country" name="country" required>
-                        <option value="" data-i18n="form_country_ph">Select your country</option>
-                        <option value="Japan">Japan</option>
-                        <option value="United States">United States</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Other">Other</option>
+                    <label for="gs_company"><span data-i18n="form_company">Company</span> <span class="required">*</span></label>
+                    <input type="text" id="gs_company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="gs_site_type"><span data-i18n="form_site_type">Type of site</span> <span class="required">*</span></label>
+                    <select id="gs_site_type" name="site_type" required>
+                        <option value="" data-i18n="form_site_type_ph">Select site type (construction, warehouse, etc.)</option>
+                        <option value="Construction" data-i18n="site_type_construction">Construction</option>
+                        <option value="Warehouse" data-i18n="site_type_warehouse">Warehouse</option>
+                        <option value="Manufacturing" data-i18n="site_type_manufacturing">Manufacturing</option>
+                        <option value="Logistics" data-i18n="site_type_logistics">Logistics</option>
+                        <option value="Other" data-i18n="site_type_other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
