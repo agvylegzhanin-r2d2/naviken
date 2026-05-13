@@ -224,8 +224,8 @@
         }
         .hero-detail .section-lead { text-align: center; margin: 0 auto 20px; max-width: 680px; }
         .hero-detail .section-fig-wrap.framed {
-            max-width: 100%;
-            margin: 0 0 24px;
+            max-width: 66.67%;
+            margin: 0 auto 24px;
         }
         .hero-detail .stats-grid {
             grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -409,6 +409,34 @@
         @media (max-width: 768px) {
             .team-members { grid-template-columns: 1fr; }
         }
+        /* Backed by OIST */
+        .backed-by { padding: 56px 0 64px; }
+        .backed-by-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 24px;
+        }
+        .backed-by-logo {
+            padding: 16px 24px;
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            max-width: 360px;
+            width: 100%;
+        }
+        .backed-by-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
         /* Images */
         .section-fig { max-width: 100%; width: 100%; border-radius: 12px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
         .section-fig-wrap { margin: 24px 0; text-align: center; }
@@ -487,7 +515,7 @@
                     </span>
                     <div class="info-bar-text">
                         <p class="info-bar-brand">GenbaSense</p>
-                        <p class="info-bar-sub" data-i18n="info_sub">Next-generation site safety powered by UWB.</p>
+                        <p class="info-bar-sub" data-i18n="info_sub">Next-generation site safety powered by UWB and haptics.</p>
                     </div>
                 </div>
                 <nav class="info-bar-nav" aria-label="Main navigation">
@@ -676,6 +704,17 @@
                             </svg>
                             LinkedIn
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="backed-by" id="backed-by">
+            <div class="container">
+                <h2 class="section-title" data-i18n="backed_by_title">Backed by OIST</h2>
+                <div class="backed-by-content">
+                    <div class="backed-by-logo">
+                        <img src="imgs/oist_inno.png" alt="OIST Innovation">
                     </div>
                 </div>
             </div>
