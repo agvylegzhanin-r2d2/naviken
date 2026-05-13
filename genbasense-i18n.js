@@ -88,7 +88,19 @@
             contact_eyebrow: 'Get in touch',
             contact_title: 'Contact Us Today',
             contact_lead: "Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.",
-            back_link: '← Back to product choice'
+            back_link: '← Back to product choice',
+            btn_contact_nav: 'Contact',
+            form_name: 'Full Name',
+            form_email: 'Email',
+            form_phone: 'Phone Number',
+            form_country: 'Country',
+            form_country_ph: 'Select your country',
+            form_message: 'Message',
+            form_message_ph: 'Tell us about your site and safety needs...',
+            form_submit: 'Send message',
+            form_submitting: 'Submitting...',
+            form_success: "Thank you! We'll contact you soon.",
+            form_error: 'Something went wrong. Please try again.'
         },
         ja: {
             page_title: 'GenbaSense – 現場のすべての作業員のためのデジタル安全センス',
@@ -175,9 +187,24 @@
             contact_eyebrow: 'お問い合わせ',
             contact_title: 'お問い合わせ',
             contact_lead: 'GenbaSenseについてご質問がありますか？チームまでご連絡ください。現場の安全向上についてご相談ください。',
-            back_link: '← 製品選択に戻る'
+            back_link: '← 製品選択に戻る',
+            btn_contact_nav: 'お問い合わせ',
+            form_name: 'お名前',
+            form_email: 'メールアドレス',
+            form_phone: '電話番号',
+            form_country: '国',
+            form_country_ph: '国を選択',
+            form_message: 'メッセージ',
+            form_message_ph: '現場の状況や安全ニーズについてお聞かせください...',
+            form_submit: '送信する',
+            form_submitting: '送信中...',
+            form_success: 'ありがとうございます。近日中にご連絡いたします。',
+            form_error: 'エラーが発生しました。もう一度お試しください。'
         }
     };
+
+    window.GS_I18N = t;
+    window.GS_getLang = function () { return currentLang; };
 
     function applyLang(lang) {
         currentLang = lang;
@@ -194,6 +221,16 @@
                 el.textContent = t[lang][key];
             }
         });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-placeholder');
+            if (t[lang][key]) el.placeholder = t[lang][key];
+        });
+
+        var submitBtn = document.querySelector('#gsContactForm .submit-btn');
+        if (submitBtn && !submitBtn.disabled) {
+            submitBtn.setAttribute('data-i18n', 'form_submit');
+        }
 
         var btnEn = document.querySelector('.gs-lang-en');
         var btnJa = document.querySelector('.gs-lang-ja');

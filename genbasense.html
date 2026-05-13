@@ -135,6 +135,52 @@
             font-family: inherit;
         }
         .gs-lang-toggle:hover { border-color: #2d5a27; color: #2d5a27; }
+        .btn-contact-nav {
+            display: inline-block;
+            padding: 10px 22px;
+            background: #2d5a27;
+            color: #fff !important;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 999px;
+            text-decoration: none !important;
+            box-shadow: 0 4px 14px rgba(45,90,39,0.25);
+        }
+        .btn-contact-nav:hover { background: #1e4620; color: #fff !important; text-decoration: none !important; }
+        /* Contact form */
+        .contact-form-wrap { max-width: 520px; margin: 32px auto 0; text-align: left; }
+        .contact-form .form-group { margin-bottom: 20px; }
+        .contact-form label {
+            display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; color: #333;
+        }
+        .contact-form .required { color: #c0392b; }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 10px;
+            font-size: 16px; font-family: inherit; background: #fff;
+        }
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none; border-color: #2d5a27; box-shadow: 0 0 0 3px rgba(45,90,39,0.12);
+        }
+        .contact-form textarea { min-height: 110px; resize: vertical; }
+        .contact-form .submit-btn {
+            width: 100%; padding: 14px; background: #2d5a27; color: #fff; border: none;
+            border-radius: 999px; font-size: 16px; font-weight: 700; cursor: pointer;
+            box-shadow: 0 4px 16px rgba(45,90,39,0.25); transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .contact-form .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,39,0.35);
+        }
+        .contact-form .submit-btn:disabled { background: #aaa; cursor: not-allowed; }
+        .form-success, .form-error {
+            display: none; padding: 14px 16px; border-radius: 10px; margin-bottom: 20px; font-size: 14px;
+        }
+        .form-success { background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
+        .form-error { background: #fdecea; border: 1px solid #f5c6cb; color: #721c24; }
+        .contact-emails { margin-top: 28px; font-size: 15px; color: #555; }
         html { scroll-behavior: smooth; }
         /* Hero */
         .hero { padding: 0 0 56px; text-align: center; }
@@ -277,7 +323,7 @@
                     <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
                     <a href="#team" data-i18n="nav_team">Team</a>
                     <a href="#product" data-i18n="nav_product">Product</a>
-                    <a href="#contact" data-i18n="nav_contact">Contact</a>
+                    <a href="#contact" class="btn-contact-nav" data-i18n="btn_contact_nav">Contact</a>
                     <button type="button" id="gs-lang-toggle" class="gs-lang-toggle" aria-label="Switch language">
                         <span class="gs-lang-en">🇯🇵 日本語</span>
                         <span class="gs-lang-ja" style="display:none;">🇺🇸 English</span>
@@ -496,7 +542,43 @@
                 <p class="section-eyebrow" data-i18n="contact_eyebrow">Get in touch</p>
                 <h2 class="section-title" data-i18n="contact_title">Contact Us Today</h2>
                 <p class="section-lead" data-i18n="contact_lead">Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.</p>
-                <div class="contact">
+                <div class="contact-form-wrap">
+                    <div class="form-success" id="gsFormSuccess" data-i18n="form_success">Thank you! We'll contact you soon.</div>
+                    <div class="form-error" id="gsFormError" data-i18n="form_error">Something went wrong. Please try again.</div>
+                    <form id="gsContactForm" class="contact-form" action="https://script.google.com/macros/s/AKfycbw9GETXoKpXtsfgCeZ3t1dVdd2oxyDqq8ii_hhhhvmgz47NCGc9FWuvtiuirUeaGTui/exec" method="POST" target="gs_hidden_iframe">
+                        <input type="hidden" id="gs_timestamp" name="timestamp">
+                        <input type="hidden" name="interest" value="GenbaSense Contact">
+                        <div class="form-group">
+                            <label for="gs_name"><span data-i18n="form_name">Full Name</span> <span class="required">*</span></label>
+                            <input type="text" id="gs_name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gs_email"><span data-i18n="form_email">Email</span> <span class="required">*</span></label>
+                            <input type="email" id="gs_email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gs_phone" data-i18n="form_phone">Phone Number</label>
+                            <input type="tel" id="gs_phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="gs_country"><span data-i18n="form_country">Country</span> <span class="required">*</span></label>
+                            <select id="gs_country" name="country" required>
+                                <option value="" data-i18n="form_country_ph">Select your country</option>
+                                <option value="Japan">Japan</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="gs_message" data-i18n="form_message">Message</label>
+                            <textarea id="gs_message" name="message" data-i18n-placeholder="form_message_ph" placeholder="Tell us about your site and safety needs..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-i18n="form_submit">Send message</button>
+                    </form>
+                    <iframe name="gs_hidden_iframe" id="gs_hidden_iframe" style="display:none;" title="Form submission"></iframe>
+                </div>
+                <div class="contact-emails contact">
                     <p><a href="mailto:a.vylegzhanin@oist.jp">a.vylegzhanin@oist.jp</a></p>
                     <p><a href="mailto:s.zobnin@oist.jp">s.zobnin@oist.jp</a></p>
                     <p><a href="mailto:tds@oist.jp">tds@oist.jp</a></p>
@@ -518,6 +600,34 @@
             }
             window.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
             update();
+        })();
+
+        (function () {
+            var form = document.getElementById('gsContactForm');
+            if (!form) return;
+            var successEl = document.getElementById('gsFormSuccess');
+            var errorEl = document.getElementById('gsFormError');
+            var submitBtn = form.querySelector('.submit-btn');
+            var defaultSubmitText = submitBtn ? submitBtn.textContent : 'Send message';
+
+            form.addEventListener('submit', function () {
+                document.getElementById('gs_timestamp').value = new Date().toISOString();
+                var lang = window.GS_getLang ? window.GS_getLang() : 'en';
+                var strings = window.GS_I18N && window.GS_I18N[lang];
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = (strings && strings.form_submitting) || 'Submitting...';
+                }
+                setTimeout(function () {
+                    if (successEl) successEl.style.display = 'block';
+                    if (errorEl) errorEl.style.display = 'none';
+                    form.reset();
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = (strings && strings.form_submit) || defaultSubmitText;
+                    }
+                }, 1000);
+            });
         })();
     </script>
 </body>
