@@ -25,7 +25,7 @@
         a { color: #2d5a27; }
         .back-link { display: inline-block; font-size: 14px; text-decoration: none; color: #555; }
         .back-link:hover { text-decoration: underline; color: #1a1a1a; }
-        section { padding: 64px 0; scroll-margin-top: 118px; }
+        section { padding: 64px 0; scroll-margin-top: 59px; }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
             color: #666; text-align: center; margin-bottom: 10px;
@@ -45,8 +45,8 @@
             z-index: 100;
             background: #fff;
             border-bottom: 1px solid #e8e8e8;
-            padding: 10px clamp(20px, 3.75vw, 35px);
-            padding-top: max(10px, env(safe-area-inset-top));
+            padding: 5px clamp(20px, 3.75vw, 35px);
+            padding-top: max(5px, env(safe-area-inset-top));
         }
         .info-bar-inner {
             max-width: 1200px;
@@ -54,20 +54,20 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 10px;
             flex-wrap: wrap;
         }
         .info-bar-brand-row {
             display: flex;
             align-items: center;
-            gap: clamp(12px, 2.5vw, 22px);
+            gap: clamp(6px, 1.25vw, 11px);
             flex: 1;
             min-width: 0;
         }
         .info-bar-logo {
-            height: clamp(101px, 15vw, 140px);
+            height: clamp(50px, 7.5vw, 70px);
             width: auto;
-            max-width: 350px;
+            max-width: 175px;
             object-fit: contain;
             flex-shrink: 0;
         }
@@ -79,14 +79,14 @@
         }
         .info-bar-brand {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            font-size: clamp(25px, 3.33vw, 30px);
+            font-size: clamp(13px, 1.67vw, 15px);
             font-weight: 600;
             letter-spacing: 0.01em;
-            margin-bottom: 3px;
+            margin-bottom: 1px;
             line-height: 1.2;
         }
         .info-bar-sub {
-            font-size: clamp(18px, 2.33vw, 22px);
+            font-size: clamp(9px, 1.17vw, 11px);
             font-weight: 400;
             line-height: 1.35;
             color: #555;
@@ -100,7 +100,7 @@
             flex-wrap: wrap;
         }
         .info-bar-nav a:not(.btn-contact-nav) {
-            font-size: 26px;
+            font-size: 13px;
             font-weight: 500;
             color: #333;
             text-decoration: none;
@@ -108,11 +108,11 @@
         }
         .info-bar-nav a:not(.btn-contact-nav):hover { color: #2d5a27; text-decoration: underline; }
         .gs-lang-toggle {
-            padding: 6px 12px;
+            padding: 3px 8px;
             border: 1px solid #ddd;
             border-radius: 999px;
             background: #fff;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: 600;
             color: #333;
             cursor: pointer;
@@ -122,11 +122,11 @@
         .gs-lang-toggle:hover { border-color: #2d5a27; color: #2d5a27; }
         .btn-contact-nav {
             display: inline-block;
-            padding: 10px 22px;
+            padding: 5px 11px;
             background: #2d5a27;
             color: #fff !important;
             font-weight: 600;
-            font-size: 26px;
+            font-size: 13px;
             border-radius: 999px;
             text-decoration: none !important;
             box-shadow: 0 4px 14px rgba(45,90,39,0.25);
@@ -331,10 +331,6 @@
             </div>
             <div class="container hero-content">
                 <h1 data-i18n="hero_title">Site Safety to Prevent Machinery Collisions</h1>
-                <p class="tagline" data-i18n="hero_tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
-                <div class="hero-stat">17K</div>
-                <p class="hero-stat-label" data-i18n="hero_stat_label">Non-fatal construction injury cases per year in Japan—vehicle and machinery accidents are the most common.</p>
-                <a href="genbasense-contact.html" class="btn-primary" data-i18n="btn_contact">Get in touch</a>
             </div>
         </section>
 
