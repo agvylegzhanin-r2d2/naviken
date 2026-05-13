@@ -167,6 +167,17 @@
             max-width: min(900px, 92vw);
             margin: 0;
         }
+        .hero-image-subline {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            font-size: clamp(16px, 2.2vw, 22px);
+            font-weight: 400;
+            line-height: 1.45;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+            max-width: min(720px, 90vw);
+            margin: clamp(12px, 2vw, 20px) 0 0;
+        }
         .hero-overlay-center {
             position: absolute;
             inset: 0;
@@ -207,7 +218,7 @@
         .hero-content { padding: 48px 0 56px; }
         .hero-detail {
             margin-top: 28px;
-            max-width: 720px;
+            max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -217,10 +228,16 @@
             margin: 0 0 24px;
         }
         .hero-detail .stats-grid {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px;
             margin-top: 0;
         }
-        .hero-detail .stat-value { font-size: clamp(24px, 4vw, 36px); }
+        .hero-detail .stat-card { padding: 20px 10px; }
+        .hero-detail .stat-value { font-size: clamp(20px, 2.5vw, 32px); }
+        .hero-detail .stat-label { font-size: 11px; line-height: 1.35; }
+        @media (max-width: 900px) {
+            .hero-detail .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
         @media (max-width: 640px) {
             .hero-detail .stats-grid { grid-template-columns: 1fr; }
         }
@@ -329,73 +346,66 @@
         }
         .highlight-box p { font-size: 17px; margin: 0; color: #1a1a1a; }
         /* Team */
-        .team-intro {
-            font-size: 18px;
-            text-align: center;
-            margin: 0 auto 40px;
-            color: #444;
-            max-width: 720px;
-        }
         .team-members {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            max-width: 1000px;
+            gap: 16px;
+            max-width: 760px;
             margin: 0 auto;
         }
         .team-member {
             text-align: center;
-            padding: 32px 24px;
+            padding: 18px 14px;
             background: #fff;
-            border-radius: 16px;
+            border-radius: 12px;
             border: 1px solid #e8e8e8;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .member-photo {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 18px;
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 12px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .member-photo img { width: 100%; height: 100%; object-fit: cover; }
         .member-name {
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             color: #1a1a1a;
         }
         .member-degree {
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 700;
             color: #1a1a1a;
-            margin: 0 0 8px;
+            margin: 0 0 6px;
         }
         .member-description {
-            font-size: 15px;
+            font-size: 12px;
             color: #555;
-            line-height: 1.55;
-            margin-bottom: 16px;
+            line-height: 1.45;
+            margin-bottom: 10px;
             flex-grow: 1;
         }
         .linkedin-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: #0077b5;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 500;
-            padding: 8px 14px;
+            padding: 6px 10px;
             border-radius: 6px;
             background: rgba(0, 119, 181, 0.06);
         }
         .linkedin-link:hover { background: rgba(0, 119, 181, 0.14); }
-        .linkedin-link svg { width: 20px; height: 20px; }
+        .linkedin-link svg { width: 16px; height: 16px; }
         @media (max-width: 768px) {
             .team-members { grid-template-columns: 1fr; }
         }
@@ -410,13 +420,27 @@
         .solution-figs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 900px;
-            margin: 24px auto;
+            gap: 14px;
+            max-width: 620px;
+            margin: 20px auto;
         }
         .solution-figs .section-fig-wrap.framed {
             max-width: 100%;
             margin: 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+            min-height: 0;
+        }
+        .solution-figs .section-fig {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: none;
         }
         @media (max-width: 640px) {
             .solution-figs { grid-template-columns: 1fr; }
@@ -469,7 +493,8 @@
                 <nav class="info-bar-nav" aria-label="Main navigation">
                     <a href="#home" data-i18n="nav_home">Home</a>
                     <a href="#customers" data-i18n="nav_customers">Our customers</a>
-                    <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+                    <a href="#solutions" data-i18n="nav_solutions">Solution</a>
+                    <a href="#use-cases" data-i18n="nav_usecases">Use cases</a>
                     <a href="#team" data-i18n="nav_team">Team</a>
                     <a href="genbasense-contact.html" class="btn-contact-nav" data-i18n="btn_contact_nav">Contact</a>
                     <button type="button" id="gs-lang-toggle" class="gs-lang-toggle" aria-label="Switch language">
@@ -486,13 +511,13 @@
                 <img src="imgs/genbasense_images/top_picture_genba.png" alt="GenbaSense – construction site safety" class="hero-top-pic">
                 <div class="hero-overlay-center">
                     <p class="hero-image-headline" data-i18n="info_headline">Visualize invisible risks.</p>
+                    <p class="hero-image-subline" data-i18n="info_subheadline">Real-time collision prevention and surveillance for safer industrial operations.</p>
                     <a href="genbasense-contact.html" class="btn-book-demo" data-i18n="btn_book_demo">Book a demo</a>
                 </div>
             </div>
             <div class="container hero-content">
                 <h1 data-i18n="hero_title">Site Safety to Prevent Machinery Collisions</h1>
                 <div class="hero-detail">
-                    <p class="section-lead" data-i18n="challenge_lead">GenbaSense addresses the structural risks that make construction sites dangerous and expensive—by making proximity measurable, alerting instantly, and turning movement into actionable data.</p>
                     <div class="section-fig-wrap framed">
                         <img src="imgs/genbasense_images/problem.png" alt="Construction site problem – vehicle and machinery accidents" class="section-fig">
                     </div>
@@ -518,32 +543,6 @@
                             <div class="stat-value">60</div>
                             <p class="stat-label" data-i18n="stat6_label">Average days of lost work per injury</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Who we serve -->
-        <section class="section-alt" id="customers">
-            <div class="container">
-                <p class="section-eyebrow" data-i18n="serve_eyebrow">Target customers</p>
-                <h2 class="section-title" data-i18n="serve_title">Who We Serve</h2>
-                <p class="section-lead" data-i18n="serve_lead">GenbaSense helps site operation companies reduce accidents, insurance costs, and downtime</p>
-                <div class="customer-card-grid">
-                    <div class="customer-card">
-                        <img src="imgs/constr sites.png" alt="Construction sites" class="customer-card-img">
-                        <h3 data-i18n="serve1_title">Construction sites</h3>
-                    </div>
-                    <div class="customer-card">
-                        <img src="imgs/warehouses.png" alt="Warehouse operators" class="customer-card-img">
-                        <h3 data-i18n="serve2_title">Warehouse operators</h3>
-                    </div>
-                    <div class="customer-card">
-                        <img src="imgs/logistics centers.png" alt="Logistics centers" class="customer-card-img">
-                        <h3 data-i18n="serve3_title">Logistics centers</h3>
-                    </div>
-                    <div class="customer-card">
-                        <img src="imgs/heavy indusrt.png" alt="Heavy machinery production" class="customer-card-img">
-                        <h3 data-i18n="serve4_title">Heavy machinery production</h3>
                     </div>
                 </div>
             </div>
@@ -585,7 +584,7 @@
         </section>
 
         <!-- Use cases (benefit images) -->
-        <section class="section-alt">
+        <section class="section-alt" id="use-cases">
             <div class="container">
                 <p class="section-eyebrow" data-i18n="cases_eyebrow">Customer cases</p>
                 <h2 class="section-title" data-i18n="cases_title">Use Cases</h2>
@@ -609,10 +608,36 @@
             </div>
         </section>
 
+        <!-- Who we serve -->
+        <section class="section-alt" id="customers">
+            <div class="container">
+                <p class="section-eyebrow" data-i18n="serve_eyebrow">Target customers</p>
+                <h2 class="section-title" data-i18n="serve_title">Who We Serve</h2>
+                <p class="section-lead" data-i18n="serve_lead">GenbaSense helps site operation companies reduce accidents, insurance costs, and downtime</p>
+                <div class="customer-card-grid">
+                    <div class="customer-card">
+                        <img src="imgs/constr sites.png" alt="Construction sites" class="customer-card-img">
+                        <h3 data-i18n="serve1_title">Construction sites</h3>
+                    </div>
+                    <div class="customer-card">
+                        <img src="imgs/warehouses.png" alt="Warehouse operators" class="customer-card-img">
+                        <h3 data-i18n="serve2_title">Warehouse operators</h3>
+                    </div>
+                    <div class="customer-card">
+                        <img src="imgs/logistics centers.png" alt="Logistics centers" class="customer-card-img">
+                        <h3 data-i18n="serve3_title">Logistics centers</h3>
+                    </div>
+                    <div class="customer-card">
+                        <img src="imgs/heavy indusrt.png" alt="Heavy machinery production" class="customer-card-img">
+                        <h3 data-i18n="serve4_title">Heavy machinery production</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section-alt" id="team">
             <div class="container">
-                <h2 class="section-title" data-i18n="team_title">Meet Our Team</h2>
-                <p class="team-intro" data-i18n="team_intro" data-i18n-html="true"><strong>We do our best to let our product help as many people as possible.</strong></p>
+                <h2 class="section-title" data-i18n="team_title">Team</h2>
                 <div class="team-members">
                     <div class="team-member">
                         <div class="member-photo">
@@ -620,7 +645,7 @@
                         </div>
                         <h3 class="member-name">Alexey Vylegzhanin</h3>
                         <p class="member-degree">PhD</p>
-                        <p class="member-description" data-i18n="team_alex_description">Making the final product and delivering it to customers.</p>
+                        <p class="member-description" data-i18n="team_alex_description">Head of Customer Relations</p>
                         <a href="https://www.linkedin.com/in/alexey-vylegzhanin-443266175/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -634,7 +659,7 @@
                         </div>
                         <h3 class="member-name">Sergey Zobnin</h3>
                         <p class="member-degree">PhD</p>
-                        <p class="member-description" data-i18n="team_sergey_description">Coding the insane amount of lines to help you navigate.</p>
+                        <p class="member-description" data-i18n="team_sergey_description">Head of R&amp;D</p>
                         <a href="https://www.linkedin.com/in/sergey-zobnin-441a69230/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -647,7 +672,7 @@
                             <img src="imgs/Chris.png" alt="Christopher Buckley">
                         </div>
                         <h3 class="member-name">Christopher Buckley, MSc</h3>
-                        <p class="member-description" data-i18n="team_chris_description">Most impressive hardware and software developer with experience in prototyping and 3D design.</p>
+                        <p class="member-description" data-i18n="team_chris_description">Head of Technology</p>
                         <a href="https://www.linkedin.com/in/christopher-buckley-2aa52337/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Christopher Buckley LinkedIn">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -658,10 +683,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="container" style="padding: 32px 24px 48px; text-align: center;">
-            <a href="index.html" class="back-link" data-i18n="back_link">&larr; Back to product choice</a>
-        </div>
     </div>
 
     <script src="genbasense-i18n.js"></script>
