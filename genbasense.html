@@ -47,6 +47,7 @@
             border-bottom: 1px solid #e8e8e8;
             padding: 5px clamp(20px, 3.75vw, 35px);
             padding-top: max(5px, env(safe-area-inset-top));
+            overflow: visible;
         }
         .info-bar-inner {
             max-width: 1200px;
@@ -63,13 +64,24 @@
             gap: clamp(6px, 1.25vw, 11px);
             flex: 1;
             min-width: 0;
+            overflow: visible;
+        }
+        .info-bar-logo-wrap {
+            flex-shrink: 0;
+            position: relative;
+            width: clamp(100px, 15vw, 175px);
+            height: clamp(50px, 7.5vw, 70px);
+            overflow: visible;
         }
         .info-bar-logo {
-            height: clamp(50px, 7.5vw, 70px);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: clamp(100px, 15vw, 140px);
             width: auto;
-            max-width: 175px;
+            max-width: 350px;
             object-fit: contain;
-            flex-shrink: 0;
         }
         .info-bar-text {
             text-align: left;
@@ -301,7 +313,9 @@
         <header class="info-bar">
             <div class="info-bar-inner">
                 <div class="info-bar-brand-row">
-                    <img src="imgs/genbasense_images/logo_genbasense_2.0.png" alt="GenbaSense" class="info-bar-logo">
+                    <span class="info-bar-logo-wrap">
+                        <img src="imgs/genbasense_images/logo_genbasense_2.0.png" alt="GenbaSense" class="info-bar-logo">
+                    </span>
                     <div class="info-bar-text">
                         <p class="info-bar-brand">GenbaSense</p>
                         <p class="info-bar-sub" data-i18n="info_sub">Next-generation site safety powered by UWB.</p>
