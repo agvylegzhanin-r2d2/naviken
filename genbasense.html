@@ -447,9 +447,9 @@
         .section-fig-wrap.framed .section-fig { margin: 0; border-radius: 8px; }
         .solution-figs {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 14px;
-            max-width: 620px;
+            max-width: 920px;
             margin: 20px auto;
         }
         .solution-figs .section-fig-wrap.framed {
@@ -582,6 +582,9 @@
                 <h2 class="section-title" data-i18n="sol_title">How Our Technology Works</h2>
                 <p class="section-lead" data-i18n="sol_lead">GenbaSense turns site movement into real-time safety—by detecting proximity, alerting with haptics, and analyzing patterns for continuous improvement.</p>
                 <div class="solution-figs">
+                    <div class="section-fig-wrap framed">
+                        <img src="imgs/mvp_1.jpg" alt="GenbaSense wearable MVP – UWB proximity device" class="section-fig">
+                    </div>
                     <div class="section-fig-wrap framed">
                         <img src="imgs/crane_UWB_expl.png" alt="Crane UWB explanation – GenbaSense safety" class="section-fig">
                     </div>
