@@ -71,7 +71,10 @@ try {
     git add .
     git commit -m "Deploy GenbaSense standalone site"
 
-    git remote remove origin 2>$null | Out-Null
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = 'SilentlyContinue'
+    git remote remove origin *> $null
+    $ErrorActionPreference = $prevEap
     git remote add origin $repo
 
     git push -u origin main --force
