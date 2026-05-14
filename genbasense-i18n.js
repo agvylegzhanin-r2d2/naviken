@@ -16,7 +16,7 @@
             nav_contact: 'Contact',
             info_tag: 'UWB Safety Solution',
             info_headline: 'Visualize invisible risks.',
-            info_subheadline: 'Real-time collision prevention and surveillance for safer industrial operations.',
+            info_subheadline: 'Real-time collision prevention and surveillance for safer industrial operations. Save on insurance, compensations and work stoppage costs.',
             info_sub: 'Next-generation site safety powered by UWB and haptics.',
             hero_title: 'Site Safety to Prevent Machinery Collisions',
             hero_tagline: 'For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.',
