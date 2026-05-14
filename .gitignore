@@ -2,6 +2,9 @@
 .DS_Store
 Thumbs.db
 
+# Local GenbaSense repo clone (canonical source: github.com/agvylegzhanin-r2d2/genbasense)
+genbasense-repo/
+
 # Editor
 .vscode/
 .idea/
